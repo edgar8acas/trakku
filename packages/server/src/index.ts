@@ -1,31 +1,12 @@
-import express from "express";
+import "reflect-metadata";
+import { createOrmConnection } from "./helpers/createOrmConnection";
+import { startServer } from "./startServer";
+import api from "./router";
 
-const app = express();
+const PORT = process.env.PORT || 5000;
+const app = startServer(api);
+(async function setup() {
+  await createOrmConnection();
+})();
 
-const add = (a: number, b?: number): number => {
-  if (b) {
-    return a + b;
-  } else {
-    return a;
-  }
-};
-
-interface Chair {
-  width: number;
-  height: number;
-}
-
-const victorianChair: Chair = {
-  width: 32,
-  height: 30,
-};
-
-app.get("/", (req: any) => {
-  req.name = "something";
-  const result = add(4.43, 5.21);
-  add(3);
-  console.log(result.toFixed());
-  console.log(req.name);
-});
-
-console.log("hello from typescript!");
+app.listen(PORT, () => console.log(`Listening from port ${PORT}`));
