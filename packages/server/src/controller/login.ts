@@ -4,9 +4,9 @@ import { getCustomRepository } from "typeorm";
 import { UserRepository } from "../repository/UserRepository";
 import createError from "http-errors";
 import { isPasswordCorrect } from "../helpers/bcrypt";
-const loginRouter: Router = Router();
+const LoginController: Router = Router();
 
-loginRouter.post(
+LoginController.post(
   "/",
   asyncHandler(async (req, res, next) => {
     const { email, password } = req.body;
@@ -28,4 +28,4 @@ loginRouter.post(
   })
 );
 
-export default loginRouter;
+export default LoginController;

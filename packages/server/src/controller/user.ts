@@ -3,9 +3,9 @@ import { getCustomRepository } from "typeorm";
 import { UserRepository } from "../repository/UserRepository";
 import asyncHandler from "express-async-handler";
 
-const userRouter: Router = Router();
+const UserController: Router = Router();
 
-userRouter.post(
+UserController.post(
   "/",
   asyncHandler(async (req, res, next) => {
     await getCustomRepository(UserRepository).createAndSave(req.body);
@@ -13,4 +13,4 @@ userRouter.post(
   })
 );
 
-export default userRouter;
+export default UserController;

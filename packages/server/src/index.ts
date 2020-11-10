@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import { createOrmConnection } from "./helpers/createOrmConnection";
 import { startServer } from "./startServer";
-import api from "./router";
+import api from "./controller";
 
 const PORT = process.env.PORT || 5000;
 const app = startServer(api);
