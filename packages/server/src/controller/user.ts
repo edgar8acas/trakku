@@ -9,7 +9,7 @@ UserController.post(
   "/",
   asyncHandler(async (req, res, next) => {
     await getCustomRepository(UserRepository).createAndSave(req.body);
-    res.status(200).json({ msg: "User was succesfully created" });
+    res.status(200).json({ status: 200 });
   })
 );
 
