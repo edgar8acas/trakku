@@ -1,9 +1,7 @@
-import React from 'react';
+import React from "react";
 
 function Login() {
-  return (
-    <div className="Login-wrapper">
-
-    </div>
-  );
+  return <div className="Login-wrapper">Login</div>;
 }
+
+export default Login;
