@@ -17,6 +17,11 @@ export class User {
   })
   name: string;
 
+  @Column({
+    length: 50,
+  })
+  lastname: string;
+
   @Column("varchar", { length: 255 })
   email: string;
 

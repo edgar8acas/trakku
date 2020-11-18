@@ -15,7 +15,7 @@ export const useAuth = () => {
 function useProvideAuth(): AuthInterface {
   const [user, setUser] = React.useState<User | null>(null);
 
-  const signIn = async function ({ email, password }: User): Promise<void> {
+  const signIn = function ({ email, password }: User): Promise<void> {
     return request("api/login", {
       method: "POST",
       body: { email, password },
@@ -24,8 +24,18 @@ function useProvideAuth(): AuthInterface {
     });
   };
 
+  const signUp = function (user: User): Promise<void> {
+    return request("api/users", {
+      method: "POST",
+      body: user,
+    }).then((res) => {
+      setUser({});
+    });
+  };
+
   return {
     user,
     signIn,
+    signUp,
   };
 }

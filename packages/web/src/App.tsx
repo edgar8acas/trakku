@@ -4,6 +4,7 @@ import { useAuth } from "./hooks/use-auth";
 import Dashboard from "./layouts/Dashboard";
 import Home from "./layouts/Home";
 import Login from "./layouts/Login";
+import Register from "./layouts/Register";
 
 function App() {
   const auth = useAuth();
@@ -11,12 +12,8 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Switch>
-          <Route path="/signin">
-            <Login />
-          </Route>
-          <Route path="/signup">
-            <div>Sign up</div>
-          </Route>
+          <Route path="/signin" component={Login} />
+          <Route path="/signup" component={Register} />
           <Route
             path="/dashboard"
             render={({ location }) =>
@@ -32,9 +29,7 @@ function App() {
               )
             }
           />
-          <Route path="/">
-            <Home />
-          </Route>
+          <Route path="/" component={Home} />
         </Switch>
       </div>
     </BrowserRouter>

@@ -17,7 +17,6 @@ function Login() {
     event.preventDefault();
     const { from } = location.state || { from: { pathname: "/dashboard" } };
     auth?.signIn(user).then(() => {
-      console.log({ from, state: location.state });
       history.replace(from.pathname);
     });
   }
@@ -32,7 +31,7 @@ function Login() {
 
   return (
     <div className="Login">
-      <div className="Login-wrapper central-wrapper">
+      <div className="Login-wrapper center-form">
         <header>
           <h1>Sign in to We Track</h1>
         </header>
@@ -66,14 +65,19 @@ function Login() {
                 value={String(user.stayLoggedIn)}
                 onChange={handleChange}
               />
-              <label htmlFor="stay-logged-in">Stay signed in</label>
+              <label htmlFor="stay-logged-in">Remember me</label>
             </div>
             <button className="button" type="submit">
               Sign in
             </button>
           </div>
         </form>
-        <button onClick={() => history.replace("/dashboard")}>Dash</button>
+        <div className="Login__register-actions">
+          <p>Don't have an account?</p>
+          <button className="button" onClick={() => history.replace("/signup")}>
+            Sign up
+          </button>
+        </div>
       </div>
     </div>
   );
