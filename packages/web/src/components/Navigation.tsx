@@ -6,8 +6,8 @@ function Navigation() {
     <nav className="Navigation">
       <ul>
         <li>
-          <Link to="/login" className="Navigation--register">
-            Log in
+          <Link to="/signin" className="Navigation--register">
+            Sign in
           </Link>
         </li>
       </ul>

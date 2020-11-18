@@ -10,6 +10,7 @@ LoginController.post(
   "/",
   asyncHandler(async (req, res, next) => {
     const { email, password } = req.body;
+
     if (email && password) {
       const user = await getCustomRepository(UserRepository).findOne({
         email,
@@ -20,7 +21,6 @@ LoginController.post(
       }
 
       if (await isPasswordCorrect(password, user.password)) {
-        req.session.userId = user.id;
         return res.status(200).json({ status: 200 });
       }
       return next(createError(401, "Failed to authenticate user"));

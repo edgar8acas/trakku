@@ -3,9 +3,12 @@ import ReactDOM from "react-dom";
 import "./styles/index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { ProvideAuth } from "./hooks/use-auth";
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ProvideAuth>
+      <App />
+    </ProvideAuth>
   </React.StrictMode>,
   document.getElementById("root")
 );

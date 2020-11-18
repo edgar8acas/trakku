@@ -12,8 +12,8 @@ function Header({ navigation, logo }: HeaderProps) {
       <div className="Header__wrapper central-wrapper">
         {logo || <div>My logo</div>}
         {navigation}
-        <Link to="/signin" className="button Header__register">
-          Sign in
+        <Link to="/signup" className="button Header__register">
+          Sign up
         </Link>
       </div>
     </div>
