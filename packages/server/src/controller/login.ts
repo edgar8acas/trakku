@@ -4,7 +4,6 @@ import { getCustomRepository } from "typeorm";
 import { UserRepository } from "../repository/UserRepository";
 import createError from "http-errors";
 import { isPasswordCorrect } from "../helpers/bcrypt";
-import { redis } from "../redis";
 const LoginController: Router = Router();
 LoginController.post(
   "/",
@@ -21,6 +20,7 @@ LoginController.post(
       }
 
       if (await isPasswordCorrect(password, user.password)) {
+        req.session.userId = user.id;
         return res.status(200).json({ status: 200 });
       }
       return next(createError(401, "Failed to authenticate user"));
