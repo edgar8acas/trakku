@@ -21,7 +21,10 @@ LoginController.post(
 
       if (await isPasswordCorrect(password, user.password)) {
         req.session.userId = user.id;
-        return res.status(200).json({ status: 200 });
+
+        return res
+          .status(200)
+          .json({ status: 200, data: { user: { ...user, password: "" } } });
       }
       return next(createError(401, "Failed to authenticate user"));
     }
