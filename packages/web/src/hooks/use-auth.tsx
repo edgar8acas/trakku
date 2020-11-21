@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { AuthInterface, User } from "../typings";
 import request from "../utilities/request";
 
 const authContext = React.createContext<AuthInterface | null>(null);

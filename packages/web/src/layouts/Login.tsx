@@ -1,6 +1,7 @@
 import React, { SyntheticEvent, useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import { useAuth } from "../hooks/use-auth";
+import { LocationState } from "../typings";
 
 function Login() {
   const [user, setUser] = useState({

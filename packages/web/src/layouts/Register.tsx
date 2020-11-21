@@ -1,6 +1,7 @@
 import React, { SyntheticEvent, useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import { useAuth } from "../hooks/use-auth";
+import { LocationState } from "../typings";
 
 function Register() {
   const [user, setUser] = useState({
@@ -16,7 +17,7 @@ function Register() {
 
   function handleChange(event: any) {
     const { name, value } = event.target;
-    setUser((previousUser) => ({ ...previousUser, [name]: value }));
+    setUser((prevUser) => ({ ...prevUser, [name]: value }));
   }
   function handleSubmit(event: SyntheticEvent) {
     event.preventDefault();
