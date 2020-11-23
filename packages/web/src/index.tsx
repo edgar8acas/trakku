@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import "./styles/index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { ProvideAuth } from "./hooks/use-auth";
 import { configureStore } from "@reduxjs/toolkit";
 import rootReducer from "./slices";
 import { Provider } from "react-redux";
@@ -16,9 +15,7 @@ const store = configureStore({
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <ProvideAuth>
-        <App />
-      </ProvideAuth>
+      <App />
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")

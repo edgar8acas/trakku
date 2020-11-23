@@ -1,7 +1,7 @@
 import React, { SyntheticEvent, useState } from "react";
-import { useHistory, useLocation } from "react-router-dom";
-import { useAuth } from "../hooks/use-auth";
-import { LocationState } from "../typings";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { loginUser, selectAuth } from "../slices/auth";
 
 function Login() {
   const [user, setUser] = useState({
@@ -10,16 +10,12 @@ function Login() {
     stayLoggedIn: "false",
   });
 
-  const auth = useAuth();
   const history = useHistory();
-  const location = useLocation<LocationState>();
-
+  const dispatch = useDispatch();
+  const { error } = useSelector(selectAuth);
   function handleSubmit(event: SyntheticEvent) {
     event.preventDefault();
-    const { from } = location.state || { from: { pathname: "/dashboard" } };
-    auth?.signIn(user).then(() => {
-      history.replace(from.pathname);
-    });
+    dispatch(loginUser(user));
   }
 
   // TODO: type the event
@@ -35,6 +31,7 @@ function Login() {
       <div className="Login-wrapper center-form">
         <header>
           <h1>Sign in to We Track</h1>
+          {error}
         </header>
         <form className="Login-form" onSubmit={handleSubmit}>
           <div className="control">

@@ -1,35 +1,21 @@
 import React from "react";
-import { Switch, Route, BrowserRouter, Redirect } from "react-router-dom";
-import { useAuth } from "./hooks/use-auth";
+import { Switch, BrowserRouter } from "react-router-dom";
 import Dashboard from "./layouts/Dashboard";
 import Home from "./layouts/Home";
 import Login from "./layouts/Login";
 import Register from "./layouts/Register";
+import { PrivateRoute } from "./router/PrivateRoute";
+import { PublicRoute } from "./router/PublicRoute";
 
 function App() {
-  const auth = useAuth();
   return (
     <BrowserRouter>
       <div className="App">
         <Switch>
-          <Route path="/signin" component={Login} />
-          <Route path="/signup" component={Register} />
-          <Route
-            path="/dashboard"
-            render={({ location }) =>
-              auth?.user ? (
-                <Dashboard />
-              ) : (
-                <Redirect
-                  to={{
-                    pathname: "/signin",
-                    state: { from: location },
-                  }}
-                />
-              )
-            }
-          />
-          <Route path="/" component={Home} />
+          <PublicRoute path="/signin" component={Login} />
+          <PublicRoute path="/signup" component={Register} />
+          <PrivateRoute path="/dashboard" component={Dashboard} />
+          <PublicRoute path="/" component={Home} />
         </Switch>
       </div>
     </BrowserRouter>

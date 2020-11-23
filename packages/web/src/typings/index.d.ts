@@ -1,3 +1,6 @@
+import { Action } from "@reduxjs/toolkit";
+import { ThunkAction } from "redux-thunk";
+
 export interface LocationState {
   from: {
     pathname: string;
@@ -27,3 +30,5 @@ export interface AuthState {
 export interface RootState {
   authState: AuthState;
 }
+
+export type AppThunk = ThunkAction<void, RootState, unknown, Action<string>>;
