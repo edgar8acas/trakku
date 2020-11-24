@@ -26,7 +26,7 @@ export class User {
   email: string;
 
   @Column("text")
-  password: string;
+  password?: string;
 
   @OneToOne((type) => Issue, (issue) => issue.user)
   issue: Issue;

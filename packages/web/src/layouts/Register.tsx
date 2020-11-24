@@ -1,7 +1,7 @@
 import React, { SyntheticEvent, useState } from "react";
-import { useHistory, useLocation } from "react-router-dom";
-import { useAuth } from "../hooks/use-auth";
-import { LocationState } from "../typings";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { signUpUser } from "../slices/auth";
 
 function Register() {
   const [user, setUser] = useState({
@@ -11,20 +11,15 @@ function Register() {
     lastname: "",
   });
 
+  const dispatch = useDispatch();
   const history = useHistory();
-  const auth = useAuth();
-  const location = useLocation<LocationState>();
-
   function handleChange(event: any) {
     const { name, value } = event.target;
     setUser((prevUser) => ({ ...prevUser, [name]: value }));
   }
   function handleSubmit(event: SyntheticEvent) {
     event.preventDefault();
-    const { from } = location.state || { from: { pathname: "/dashboard" } };
-    auth?.signUp(user).then(() => {
-      history.replace(from.pathname);
-    });
+    dispatch(signUpUser(user));
   }
 
   return (
