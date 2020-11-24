@@ -13,15 +13,15 @@ const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    login: (state) => {
+    loading: (state) => {
       state.loading = true;
     },
-    loginSuccess: (state, { payload }) => {
+    success: (state, { payload }) => {
       state.currentUser = payload;
       state.isAuthenticated = true;
       state.loading = false;
     },
-    loginError: (state, { payload }) => {
+    error: (state, { payload }) => {
       state.error = payload;
       state.isAuthenticated = false;
       state.loading = false;
@@ -29,13 +29,13 @@ const authSlice = createSlice({
   },
 });
 
-export const { login, loginError, loginSuccess } = authSlice.actions;
+export const { loading, error, success } = authSlice.actions;
 
 export const loginUser = ({ email, password }: User): AppThunk => async (
   dispatch
 ) => {
   try {
-    dispatch(login());
+    dispatch(loading());
     const {
       data: { user },
     } = await request("api/login", {
@@ -43,9 +43,24 @@ export const loginUser = ({ email, password }: User): AppThunk => async (
       body: { email, password },
     });
 
-    dispatch(loginSuccess(user));
+    dispatch(success(user));
   } catch ({ message }) {
-    dispatch(loginError(message));
+    dispatch(error(message));
+  }
+};
+
+export const signUpUser = (user: User): AppThunk => async (dispatch) => {
+  try {
+    dispatch(loading());
+    const {
+      data: { user: saved },
+    } = await request("api/users", {
+      method: "POST",
+      body: user,
+    });
+    dispatch(success(saved));
+  } catch ({ message }) {
+    dispatch(error(message));
   }
 };
 
