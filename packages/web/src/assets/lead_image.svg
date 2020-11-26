@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="201.08mm" height="120.74mm" version="1.1" viewBox="0 0 201.08 120.74" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:osb="http://www.openswatchbook.org/uri/2009/osb" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linearGradient1008" osb:paint="solid">
+   <stop stop-color="#92ff8f" offset="0"/>
+  </linearGradient>
+  <linearGradient id="linearGradient1002" osb:paint="solid">
+   <stop stop-color="#a0e5ff" offset="0"/>
+  </linearGradient>
+  <linearGradient id="linearGradient881" osb:paint="solid">
+   <stop stop-color="#ffe37c" offset="0"/>
+  </linearGradient>
+  <linearGradient id="linearGradient985" x1="3.374" x2="66.279" y1="91.786" y2="91.786" gradientTransform="matrix(1.286 0 0 1.286 39.678 -29.882)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient1002"/>
+  <linearGradient id="linearGradient1010" x1="-135.42" x2="-72.81" y1="68.596" y2="68.596" gradientTransform="matrix(1.0063 0 0 .56615 1.5306 29.802)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient1002"/>
+  <linearGradient id="linearGradient1034" x1="76.404" x2="114.95" y1="112.05" y2="112.05" gradientTransform="matrix(.54784 0 0 .15691 35.633 84.728)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient1002"/>
+  <linearGradient id="linearGradient1040" x1="77.868" x2="94.174" y1="101.59" y2="101.59" gradientTransform="matrix(1.3186 0 0 .77232 -25.38 23.849)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient1002"/>
+  <linearGradient id="linearGradient1170" x1="3.374" x2="66.279" y1="91.786" y2="91.786" gradientTransform="matrix(1.2796 0 0 1.2796 -48.57 -29.396)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient881"/>
+  <linearGradient id="linearGradient1172" x1="77.868" x2="94.174" y1="101.59" y2="101.59" gradientTransform="matrix(1.2689 0 0 .99323 -137.08 1.4683)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient881"/>
+  <linearGradient id="linearGradient1010-5" x1="-135.42" x2="-72.81" y1="68.596" y2="68.596" gradientTransform="matrix(1.0063 0 0 .56615 70.133 29.802)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient881"/>
+  <linearGradient id="linearGradient1040-7" x1="77.868" x2="94.174" y1="101.59" y2="101.59" gradientTransform="matrix(1.0359 0 0 .77213 65.463 23.447)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient1008"/>
+  <linearGradient id="linearGradient1010-3" x1="-135.42" x2="-72.81" y1="68.596" y2="68.596" gradientTransform="matrix(1.0063 0 0 .56615 -67.952 29.617)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient1008"/>
+  <linearGradient id="linearGradient1462" x1="3.374" x2="66.279" y1="91.786" y2="91.786" gradientTransform="matrix(.9915 0 0 .9915 138.19 -.34838)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient1008"/>
+  <linearGradient id="linearGradient1464" x1="76.404" x2="114.95" y1="112.05" y2="112.05" gradientTransform="matrix(.43039 0 0 .15687 113.4 84.311)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient1008"/>
+ </defs>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(-3.1363 -61.335)">
+  <g opacity=".998">
+   <g transform="matrix(.77098 0 0 .77098 38.596 60.187)">
+    <rect x="44.251" y="67.494" width="80.428" height="41.325" ry="4.9281" fill="none" stroke="url(#linearGradient985)" stroke-width="1.286"/>
+    <g transform="matrix(.92504 0 0 1.286 -20.729 -34.962)">
+     <g fill="#e6e6e6">
+      <g transform="translate(-.10606)">
+       <ellipse cx="77.959" cy="84.32" rx="1.3902" ry="1"/>
+       <rect x="82.658" y="83.32" width="35.438" height="2"/>
+      </g>
+      <ellipse cx="77.853" cy="88.823" rx="1.3902" ry="1"/>
+      <rect x="82.825" y="87.823" width="26.633" height="2"/>
+     </g>
+    </g>
+    <g transform="matrix(1.286 0 0 1.286 -49.465 -28.849)">
+     <rect x="77.491" y="100.44" width="21.118" height="3.7383" ry="1.8691" fill="url(#linearGradient1040)" stroke="url(#linearGradient1034)" stroke-width=".29319"/>
+     <text x="79.135147" y="103.0125" fill="#ffffff" font-family="Montserrat" font-size="8.3076px" font-weight="bold" stroke-width=".20769" style="line-height:1.25" xml:space="preserve"><tspan x="79.135147" y="103.0125" fill="#ffffff" font-family="Montserrat" font-size="2.4923px" font-weight="bold" stroke-width=".20769">Development</tspan></text>
+    </g>
+    <text transform="matrix(1.286 0 0 1.286 -48.649 -28.849)" x="120.31635" y="80.46067" fill="#b3b3b3" font-family="sans-serif" font-size="8.3076px" stroke-width=".20769" style="line-height:1.25" xml:space="preserve"><tspan x="120.31635" y="80.46067" fill="#b3b3b3" font-family="Montserrat" font-size="2.4923px" stroke-width=".20769">1 day left</tspan></text>
+    <circle cx="116.85" cy="102.39" r="2.9225" fill="#ccc" stroke-width=".84164"/>
+    <text x="114.91075" y="104.01059" fill="#ffffff" font-family="sans-serif" font-size="10.583px" stroke-width=".26458" style="line-height:1.25" xml:space="preserve"><tspan x="114.91075" y="104.01059" fill="#ffffff" font-family="Montserrat" font-size="4.9389px" font-weight="500" stroke-width=".26458">E</tspan></text>
+   </g>
+   <g transform="matrix(.77759 0 0 .77759 37.829 22.137)">
+    <rect x="-44.019" y="67.492" width="80.024" height="41.117" ry="4.9034" fill="none" stroke="url(#linearGradient1170)" stroke-width=".9955"/>
+    <g transform="matrix(.92504 0 0 1.286 -109 -35.316)" stroke-width=".91733">
+     <g fill="#e6e6e6" stroke-width=".91733">
+      <g transform="translate(-.10606)">
+       <ellipse cx="77.959" cy="84.32" rx="1.3902" ry="1"/>
+       <rect x="82.658" y="83.32" width="35.438" height="2"/>
+      </g>
+      <ellipse cx="77.853" cy="88.823" rx="1.3902" ry="1"/>
+      <rect x="82.825" y="87.823" width="26.633" height="2"/>
+     </g>
+    </g>
+    <g>
+     <rect x="-38.083" y="99.967" width="20.323" height="4.8075" ry="2.4038" fill="url(#linearGradient1172)"/>
+     <text x="-36.074482" y="103.30795" fill="#ffffff" font-family="Montserrat" font-size="10.684px" font-weight="bold" stroke-width="1.0005" style="line-height:1.25" xml:space="preserve"><tspan x="-36.074482" y="103.30795" fill="#ffffff" font-family="Montserrat" font-size="3.2052px" font-weight="bold" stroke-width="1.0005">UI Design</tspan></text>
+     <text x="16.451765" y="74.272087" fill="#b3b3b3" font-family="sans-serif" font-size="10.684px" stroke-width="1.0005" style="line-height:1.25" xml:space="preserve"><tspan x="16.451765" y="74.272087" fill="#b3b3b3" font-family="Montserrat" font-size="3.2052px" stroke-width="1.0005">2 days left</tspan></text>
+    </g>
+    <circle cx="28.586" cy="102.04" r="2.9225" fill="#ccc" stroke-width="1.0005"/>
+    <text x="26.642464" y="103.65706" fill="#ffffff" font-family="sans-serif" font-size="10.583px" stroke-width="1.0005" style="line-height:1.25" xml:space="preserve"><tspan x="26.642464" y="103.65706" fill="#ffffff" font-family="Montserrat" font-size="4.9389px" font-weight="500" stroke-width="1.0005">R</tspan></text>
+   </g>
+   <g transform="translate(.44027 -.19756)">
+    <rect transform="scale(-1,1)" x="-134.74" y="67.6" width="63" height="2.0741" ry=".78332" fill="url(#linearGradient1010)"/>
+    <text x="71.444801" y="64.98999" fill="#4d4d4d" font-family="sans-serif" font-size="4.9389px" stroke-width=".26458" style="line-height:1.25" xml:space="preserve"><tspan x="71.444801" y="64.98999" fill="#4d4d4d" font-family="Montserrat" font-size="4.9389px" font-weight="500" stroke-width=".26458">In progress</tspan></text>
+   </g>
+   <g>
+    <rect transform="scale(-1,1)" x="-66.136" y="67.6" width="63" height="2.0741" ry=".78332" fill="url(#linearGradient1010-5)"/>
+    <text x="3.3274052" y="64.99987" fill="#4d4d4d" font-family="sans-serif" font-size="4.9389px" stroke-width=".26458" style="line-height:1.25" xml:space="preserve"><tspan x="3.3274052" y="64.99987" fill="#4d4d4d" font-family="Montserrat" font-size="4.9389px" font-weight="500" stroke-width=".26458">To do</tspan></text>
+   </g>
+   <g transform="translate(-2.8551e-5)">
+    <rect x="141.72" y="74.727" width="62.008" height="31.861" ry="3.7995" fill="none" stroke="url(#linearGradient1462)" stroke-width=".9915"/>
+    <g transform="matrix(.71319 0 0 .9915 91.618 -4.2647)">
+     <g fill="#e6e6e6">
+      <g transform="translate(-.10606)">
+       <ellipse cx="77.959" cy="84.32" rx="1.3902" ry="1"/>
+       <rect x="82.658" y="83.32" width="35.438" height="2"/>
+      </g>
+      <ellipse cx="77.853" cy="88.823" rx="1.3902" ry="1"/>
+      <rect x="82.825" y="87.823" width="26.633" height="2"/>
+     </g>
+    </g>
+    <g>
+     <rect x="146.28" y="100.02" width="16.591" height="3.7374" ry="1.8687" fill="url(#linearGradient1040-7)" stroke="url(#linearGradient1464)" stroke-width=".25984"/>
+     <text x="147.89153" y="102.61103" fill="#ffffff" font-family="Montserrat" font-size="8.237px" font-weight="bold" stroke-width=".20592" style="line-height:1.25" xml:space="preserve"><tspan x="147.89153" y="102.61103" fill="#ffffff" font-family="Montserrat" font-size="2.4711px" font-weight="bold" stroke-width=".20592">Marketing</tspan></text>
+     <text x="187.79848" y="80.225029" fill="#b3b3b3" font-family="sans-serif" font-size="8.237px" stroke-width=".20592" style="line-height:1.25" xml:space="preserve"><tspan x="187.79848" y="80.225029" fill="#b3b3b3" font-family="Montserrat" font-size="2.4711px" stroke-width=".20592">3 days left</tspan></text>
+    </g>
+    <circle cx="197.69" cy="101.63" r="2.2532" fill="#ccc" stroke-width=".64888"/>
+    <text x="196.50948" y="102.96639" fill="#ffffff" font-family="sans-serif" font-size="8.1595px" stroke-width=".20399" style="line-height:1.25" xml:space="preserve"><tspan x="196.50948" y="102.96639" fill="#ffffff" font-family="Montserrat" font-size="3.8078px" font-weight="500" stroke-width=".20399">S</tspan></text>
+   </g>
+   <g transform="translate(0 -.013296)">
+    <rect transform="scale(-1,1)" x="-204.22" y="67.415" width="63" height="2.0741" ry=".78332" fill="url(#linearGradient1010-3)"/>
+    <text x="140.92731" y="64.805733" fill="#4d4d4d" font-family="sans-serif" font-size="4.9389px" stroke-width=".26458" style="line-height:1.25" xml:space="preserve"><tspan x="140.92731" y="64.805733" fill="#4d4d4d" font-family="Montserrat" font-size="4.9389px" font-weight="500" stroke-width=".26458">Done</tspan></text>
+   </g>
+   <g transform="translate(-2.8551e-5 37.497)">
+    <rect x="141.72" y="74.727" width="62.008" height="31.861" ry="3.7995" fill="none" stroke="url(#linearGradient1462)" stroke-width=".9915"/>
+    <g transform="matrix(.71319 0 0 .9915 91.618 -4.2647)">
+     <g fill="#e6e6e6">
+      <g transform="translate(-.10606)">
+       <ellipse cx="77.959" cy="84.32" rx="1.3902" ry="1"/>
+       <rect x="82.658" y="83.32" width="35.438" height="2"/>
+      </g>
+      <ellipse cx="77.853" cy="88.823" rx="1.3902" ry="1"/>
+      <rect x="82.825" y="87.823" width="26.633" height="2"/>
+     </g>
+    </g>
+    <g>
+     <rect x="146.28" y="100.02" width="16.591" height="3.7374" ry="1.8687" fill="url(#linearGradient1040-7)" stroke="url(#linearGradient1464)" stroke-width=".25984"/>
+     <text x="147.89153" y="102.61103" fill="#ffffff" font-family="Montserrat" font-size="8.237px" font-weight="bold" stroke-width=".20592" style="line-height:1.25" xml:space="preserve"><tspan x="147.89153" y="102.61103" fill="#ffffff" font-family="Montserrat" font-size="2.4711px" font-weight="bold" stroke-width=".20592">Marketing</tspan></text>
+     <text x="187.79848" y="80.225029" fill="#b3b3b3" font-family="sans-serif" font-size="8.237px" stroke-width=".20592" style="line-height:1.25" xml:space="preserve"><tspan x="187.79848" y="80.225029" fill="#b3b3b3" font-family="Montserrat" font-size="2.4711px" stroke-width=".20592">3 days left</tspan></text>
+    </g>
+    <circle cx="197.69" cy="101.63" r="2.2532" fill="#ccc" stroke-width=".64888"/>
+    <text x="196.50948" y="102.96639" fill="#ffffff" font-family="sans-serif" font-size="8.1595px" stroke-width=".20399" style="line-height:1.25" xml:space="preserve"><tspan x="196.50948" y="102.96639" fill="#ffffff" font-family="Montserrat" font-size="3.8078px" font-weight="500" stroke-width=".20399">S</tspan></text>
+   </g>
+   <g transform="translate(-2.8551e-5 74.994)">
+    <rect x="141.72" y="74.727" width="62.008" height="31.861" ry="3.7995" fill="none" stroke="url(#linearGradient1462)" stroke-width=".9915"/>
+    <g transform="matrix(.71319 0 0 .9915 91.618 -4.2647)">
+     <g fill="#e6e6e6">
+      <g transform="translate(-.10606)">
+       <ellipse cx="77.959" cy="84.32" rx="1.3902" ry="1"/>
+       <rect x="82.658" y="83.32" width="35.438" height="2"/>
+      </g>
+      <ellipse cx="77.853" cy="88.823" rx="1.3902" ry="1"/>
+      <rect x="82.825" y="87.823" width="26.633" height="2"/>
+     </g>
+    </g>
+    <g>
+     <rect x="146.28" y="100.02" width="16.591" height="3.7374" ry="1.8687" fill="url(#linearGradient1040-7)" stroke="url(#linearGradient1464)" stroke-width=".25984"/>
+     <text x="147.89153" y="102.61103" fill="#ffffff" font-family="Montserrat" font-size="8.237px" font-weight="bold" stroke-width=".20592" style="line-height:1.25" xml:space="preserve"><tspan x="147.89153" y="102.61103" fill="#ffffff" font-family="Montserrat" font-size="2.4711px" font-weight="bold" stroke-width=".20592">Marketing</tspan></text>
+     <text x="187.79848" y="80.225029" fill="#b3b3b3" font-family="sans-serif" font-size="8.237px" stroke-width=".20592" style="line-height:1.25" xml:space="preserve"><tspan x="187.79848" y="80.225029" fill="#b3b3b3" font-family="Montserrat" font-size="2.4711px" stroke-width=".20592">3 days left</tspan></text>
+    </g>
+    <circle cx="197.69" cy="101.63" r="2.2532" fill="#ccc" stroke-width=".64888"/>
+    <text x="196.50948" y="102.96639" fill="#ffffff" font-family="sans-serif" font-size="8.1595px" stroke-width=".20399" style="line-height:1.25" xml:space="preserve"><tspan x="196.50948" y="102.96639" fill="#ffffff" font-family="Montserrat" font-size="3.8078px" font-weight="500" stroke-width=".20399">S</tspan></text>
+   </g>
+   <g transform="matrix(.77098 0 0 .77098 38.596 22.69)">
+    <rect x="44.251" y="67.494" width="80.428" height="41.325" ry="4.9281" fill="none" stroke="url(#linearGradient985)" stroke-width="1.286"/>
+    <g transform="matrix(.92504 0 0 1.286 -20.729 -34.962)">
+     <g fill="#e6e6e6">
+      <g transform="translate(-.10606)">
+       <ellipse cx="77.959" cy="84.32" rx="1.3902" ry="1"/>
+       <rect x="82.658" y="83.32" width="35.438" height="2"/>
+      </g>
+      <ellipse cx="77.853" cy="88.823" rx="1.3902" ry="1"/>
+      <rect x="82.825" y="87.823" width="26.633" height="2"/>
+     </g>
+    </g>
+    <g transform="matrix(1.286 0 0 1.286 -49.465 -28.849)">
+     <rect x="77.491" y="100.44" width="21.118" height="3.7383" ry="1.8691" fill="url(#linearGradient1040)" stroke="url(#linearGradient1034)" stroke-width=".29319"/>
+     <text x="79.135147" y="103.0125" fill="#ffffff" font-family="Montserrat" font-size="8.3076px" font-weight="bold" stroke-width=".20769" style="line-height:1.25" xml:space="preserve"><tspan x="79.135147" y="103.0125" fill="#ffffff" font-family="Montserrat" font-size="2.4923px" font-weight="bold" stroke-width=".20769">Development</tspan></text>
+    </g>
+    <text transform="matrix(1.286 0 0 1.286 -48.649 -28.849)" x="120.31635" y="80.46067" fill="#b3b3b3" font-family="sans-serif" font-size="8.3076px" stroke-width=".20769" style="line-height:1.25" xml:space="preserve"><tspan x="120.31635" y="80.46067" fill="#b3b3b3" font-family="Montserrat" font-size="2.4923px" stroke-width=".20769">1 day left</tspan></text>
+    <circle cx="116.85" cy="102.39" r="2.9225" fill="#ccc" stroke-width=".84164"/>
+    <text x="114.91075" y="104.01059" fill="#ffffff" font-family="sans-serif" font-size="10.583px" stroke-width=".26458" style="line-height:1.25" xml:space="preserve"><tspan x="114.91075" y="104.01059" fill="#ffffff" font-family="Montserrat" font-size="4.9389px" font-weight="500" stroke-width=".26458">E</tspan></text>
+   </g>
+  </g>
+ </g>
+</svg>
