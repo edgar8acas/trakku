@@ -1,3 +1,4 @@
+import { Project } from "../entity/Project";
 import { createConnection } from "typeorm";
 import { Issue } from "../entity/Issue";
 import { User } from "../entity/User";
@@ -10,7 +11,7 @@ export const createOrmConnection = async () => {
     username: "postgres",
     password: "postgres",
     database: "we_track_server",
-    entities: [User, Issue],
+    entities: [User, Issue, Project],
     synchronize: true,
   })
     .then(async (connection) => {

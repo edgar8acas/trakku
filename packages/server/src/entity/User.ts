@@ -2,11 +2,14 @@ import {
   BeforeInsert,
   Column,
   Entity,
-  OneToOne,
+  JoinTable,
+  ManyToMany,
+  OneToMany,
   PrimaryGeneratedColumn,
 } from "typeorm";
 import { Issue } from "./Issue";
 import bcrypt from "bcryptjs";
+import { Project } from "./Project";
 @Entity()
 export class User {
   @PrimaryGeneratedColumn("uuid")
@@ -28,8 +31,12 @@ export class User {
   @Column("text")
   password?: string;
 
-  @OneToOne((type) => Issue, (issue) => issue.user)
-  issue: Issue;
+  @OneToMany((type) => Issue, (issue) => issue.owner)
+  issues: Issue[];
+
+  @ManyToMany((type) => Project, (project) => project.users)
+  @JoinTable()
+  projects: Project[];
 
   @BeforeInsert()
   async hashPassword() {
