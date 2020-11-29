@@ -15,7 +15,7 @@ export const createOrmConnection = async () => {
     synchronize: true,
   })
     .then(async (connection) => {
-      console.log("Succesfully conected to database!");
+      console.log("Conected to database!");
     })
     .catch((error) => console.log(error));
 };
