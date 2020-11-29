@@ -1,9 +1,11 @@
 import { Router } from "express";
 import UserController from "./user";
-import LoginController from "./login";
+import AuthController from "./auth";
+import { authenticate } from "src/middleware/auth";
 const api: Router = Router();
 
+api.use("/", AuthController);
 api.use("/users", UserController);
-api.use("/login", LoginController);
+api.use(authenticate);
 
 export default api;

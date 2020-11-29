@@ -1,5 +1,6 @@
 import express, { Application, Router } from "express";
 import bodyParser from "body-parser";
+import cookieParser from "cookie-parser";
 import morgan from "morgan";
 const cors = require("cors");
 
@@ -15,8 +16,9 @@ const SESSION_SECRET = "SoME_S3CR3t";
 export const startServer = function (router: Router): Application {
   const app = express();
 
-  app.use(cors());
+  // app.use(cors());
   app.use(bodyParser.json());
+  app.use(cookieParser());
   app.use(morgan("dev"));
 
   app.use(
@@ -25,9 +27,10 @@ export const startServer = function (router: Router): Application {
       secret: SESSION_SECRET,
       resave: false,
       saveUninitialized: false,
-      name: "sid",
+      name: "sidwt",
       cookie: {
-        maxAge: 1000 * 60 * 60 * 24 * 7, // 7 days
+        maxAge: 1000 * 60 * 60 * 24 * 365, // 1 year
+        httpOnly: false,
       },
     })
   );

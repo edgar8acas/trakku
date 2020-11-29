@@ -26,10 +26,16 @@ const authSlice = createSlice({
       state.isAuthenticated = false;
       state.loading = false;
     },
+    logoutSuccess: (state) => {
+      state.error = "";
+      state.isAuthenticated = false;
+      state.loading = false;
+      state.currentUser = {};
+    },
   },
 });
 
-export const { loading, error, success } = authSlice.actions;
+export const { loading, error, success, logoutSuccess } = authSlice.actions;
 
 export const loginUser = ({ email, password }: User): AppThunk => async (
   dispatch
@@ -62,6 +68,23 @@ export const signUpUser = (user: User): AppThunk => async (dispatch) => {
   } catch ({ message }) {
     dispatch(error(message));
   }
+};
+
+export const checkAuthentication = (): AppThunk => async (dispatch) => {
+  try {
+    const {
+      data: { user },
+    } = await request("api/me");
+    dispatch(success(user));
+  } catch (error) {}
+};
+
+export const logout = (): AppThunk => async (dispatch) => {
+  try {
+    dispatch(loading());
+    await request("api/logout", { method: "POST" });
+    dispatch(logoutSuccess());
+  } catch (error) {}
 };
 
 export const selectAuth = (state: RootState) => state.authState;

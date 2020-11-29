@@ -1,1 +1,1 @@
-export const redisSessionPrefix = "WeTrackSess:";
+export const redisSessionPrefix = "wts:";
