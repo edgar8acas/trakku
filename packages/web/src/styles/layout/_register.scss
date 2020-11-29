@@ -1,0 +1,26 @@
+.Register-wrapper {
+}
+
+.Register-wrapper header {
+  margin-top: 10rem;
+}
+
+.Register-wrapper h1 {
+  text-align: center;
+}
+
+.Register-form {
+  margin-top: 8rem;
+
+  .Register-form__actions button {
+    width: 100%;
+  }
+}
+
+.Register__go-to-signin {
+  text-align: center;
+  button.link {
+    margin-left: 0.3rem;
+    color: $primary;
+  }
+}

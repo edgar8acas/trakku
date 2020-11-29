@@ -1,0 +1,15 @@
+.Header {
+  box-shadow: 3px 0px 10px 2px $accent-gray;
+}
+
+.Header__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.Header__register {
+  margin: 0;
+}

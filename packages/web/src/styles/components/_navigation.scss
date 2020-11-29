@@ -1,0 +1,23 @@
+.Navigation {
+  display: flex;
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.Navigation ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.Navigation li {
+  margin-left: 1em;
+}
+
+.Navigation a {
+  text-decoration: none;
+  color: $accent-gray;
+  font-weight: 600;
+}

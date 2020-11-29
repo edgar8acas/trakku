@@ -1,0 +1,17 @@
+.Home {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: auto 1fr;
+}
+
+.Home__header {
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 2;
+}
+
+.Home__lead {
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 2;
+}

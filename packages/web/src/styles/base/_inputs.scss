@@ -1,0 +1,30 @@
+.control {
+  margin-bottom: 0.8rem;
+}
+
+.control label {
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.control input {
+  border: 1px solid $accent-gray;
+  border-radius: 3px;
+  padding: 0.4rem;
+  font-size: 1rem;
+}
+
+[type="text"],
+[type="email"],
+[type="password"] {
+  width: 100%;
+}
+
+[type="checkbox"],
+[type="checkbox"] + label {
+}
+
+[type="checkbox"] + label {
+  margin-left: 0.3rem;
+}

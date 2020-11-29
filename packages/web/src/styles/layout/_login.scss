@@ -1,0 +1,24 @@
+.Login-wrapper {
+}
+
+.Login-wrapper header {
+  margin-top: 10rem;
+}
+
+.Login-wrapper h1 {
+  text-align: center;
+}
+
+.Login-form {
+  align-items: center;
+  margin-top: 8rem;
+  .Login-form__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.Login__register-actions {
+  text-align: center;
+}

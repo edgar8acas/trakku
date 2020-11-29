@@ -2,7 +2,10 @@ import { ErrorRequestHandler } from "express";
 const isProd = process.env.NODE_ENV === "production";
 
 export const logErrors: ErrorRequestHandler = (err, req, res, next) => {
-  console.log(err.stack);
+  if (err.status >= 500) {
+    console.log(err.stack);
+  }
+
   next(err);
 };
 
