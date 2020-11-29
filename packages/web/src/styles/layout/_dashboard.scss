@@ -1,0 +1,17 @@
+.Dashboard {
+  display: grid;
+  height: 100vh;
+  grid-template: 1fr / 200px 1fr;
+}
+
+.Main {
+  display: grid;
+  grid-template: auto 1fr / 1fr;
+  border: 1px solid red;
+}
+
+.Main-header {
+  max-height: 150px;
+  min-height: 100px;
+  border: 1px solid blue;
+}
