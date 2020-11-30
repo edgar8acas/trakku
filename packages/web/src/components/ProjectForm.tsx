@@ -28,16 +28,21 @@ function ProjectForm() {
           touched,
         }) => (
           <form onSubmit={handleSubmit}>
-            <input
-              type="text"
-              name="name"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.name}
-            />
-            {touched.name && errors.name ? (
-              <div style={{ color: "red" }}>{errors.name}</div>
-            ) : null}
+            <div className="control">
+              <input
+                type="text"
+                name="name"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.name}
+              />
+              {touched.name && errors.name ? (
+                <div className="error" role="alert">
+                  {errors.name}
+                </div>
+              ) : null}
+            </div>
+
             <button
               type="submit"
               disabled={isSubmitting || Boolean(errors.name)}

@@ -18,3 +18,9 @@
 #{$buttons}:hover {
   background: darken($primary, 5%);
 }
+
+#{$buttons}:disabled {
+  background: $accent-gray;
+  cursor: not-allowed;
+  border: 2px solid darken($accent-gray, 5%);
+}
