@@ -5,6 +5,7 @@ import * as Yup from "yup";
 function ProjectForm() {
   return (
     <div>
+      <h2>Create project</h2>
       <Formik
         initialValues={{ name: "" }}
         onSubmit={async (values) => {

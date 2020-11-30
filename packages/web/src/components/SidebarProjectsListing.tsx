@@ -1,4 +1,5 @@
 import * as React from "react";
+import { NavLink, useRouteMatch } from "react-router-dom";
 import request from "../utilities/request";
 
 interface SidebarProjectsListingProps {
@@ -9,15 +10,15 @@ type Project = {
   name: string;
   id: number;
 };
+
 const SidebarProjectsListing: React.FC<SidebarProjectsListingProps> = ({
   show,
 }) => {
   const [projects, setProjects] = React.useState<Project[]>([]);
+  const { path } = useRouteMatch();
 
   React.useEffect(() => {
     request("api/projects").then(({ data: { projects } }) => {
-      console.log(projects);
-
       setProjects(projects);
     });
   }, []);
@@ -25,10 +26,10 @@ const SidebarProjectsListing: React.FC<SidebarProjectsListingProps> = ({
   return (
     <nav>
       <ul className={`Projects-sidebar-listing ${show ? "active" : ""}`}>
-        <li>Project 1</li>
-        <li>Project 2</li>
         {projects.map((p) => (
-          <li>{p.name}</li>
+          <li>
+            <NavLink to={`${path}/projects/${p.id}`}>{p.name}</NavLink>
+          </li>
         ))}
       </ul>
     </nav>
