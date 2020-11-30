@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink, Route, Switch, useRouteMatch } from "react-router-dom";
 import Projects from "../components/Projects";
+import SidebarProjectsListing from "../components/SidebarProjectsListing";
 import { logout } from "../slices/auth";
 
 function Dashboard() {
   const dispatch = useDispatch();
   const { path, url } = useRouteMatch();
-
+  const [showProjects, setShowProjects] = useState(false);
   return (
     <div className="Dashboard">
       <div className="Sidebar">
@@ -17,6 +18,10 @@ function Dashboard() {
           <ul>
             <li>
               <NavLink to={`${url}/projects`}>Projects</NavLink>
+              <button onClick={() => setShowProjects((prev) => !prev)}>
+                Show projects
+              </button>
+              <SidebarProjectsListing show={showProjects} />
             </li>
           </ul>
         </nav>

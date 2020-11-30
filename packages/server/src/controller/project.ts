@@ -19,4 +19,14 @@ ProjectController.post(
   })
 );
 
+ProjectController.get(
+  "/",
+  asyncHandler(async (req, res, next) => {
+    const projects = await getCustomRepository(
+      ProjectRepository
+    ).getUserProjects(req.session.userId);
+    return res.status(200).json({ status: 200, data: { projects } });
+  })
+);
+
 export default ProjectController;

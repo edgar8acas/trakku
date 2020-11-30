@@ -28,4 +28,17 @@ export class ProjectRepository extends Repository<Project> {
     await manager?.save(userToProject);
     return savedProject;
   }
+
+  async getUserProjects(userId: number) {
+    const projects = await this.createQueryBuilder("project")
+      .innerJoinAndSelect(
+        "project.userToProjects",
+        "userToProject",
+        "userToProject.user = :userId",
+        { userId: userId }
+      )
+      .printSql()
+      .getMany();
+    return projects;
+  }
 }
