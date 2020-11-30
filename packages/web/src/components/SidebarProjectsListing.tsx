@@ -1,15 +1,11 @@
 import * as React from "react";
 import { NavLink, useRouteMatch } from "react-router-dom";
+import { Project } from "../typings";
 import request from "../utilities/request";
 
 interface SidebarProjectsListingProps {
   show: boolean;
 }
-
-type Project = {
-  name: string;
-  id: number;
-};
 
 const SidebarProjectsListing: React.FC<SidebarProjectsListingProps> = ({
   show,

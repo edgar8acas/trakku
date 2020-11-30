@@ -29,4 +29,15 @@ ProjectController.get(
   })
 );
 
+ProjectController.get(
+  "/:id",
+  asyncHandler(async (req, res, next) => {
+    const { id } = req.params;
+    const project = await getCustomRepository(ProjectRepository).getProjectById(
+      id
+    );
+    return res.status(200).json({ status: 200, data: { project } });
+  })
+);
+
 export default ProjectController;

@@ -41,4 +41,9 @@ export class ProjectRepository extends Repository<Project> {
       .getMany();
     return projects;
   }
+
+  async getProjectById(id: string) {
+    const project = await this.findOne(id);
+    return project;
+  }
 }
