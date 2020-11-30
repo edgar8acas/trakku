@@ -11,8 +11,8 @@ export class UserToProject {
   isAdmin: Boolean;
 
   @ManyToOne(() => User, (user) => user.userToProjects)
-  user: User;
+  user?: User;
 
   @ManyToOne(() => Project, (project) => project.userToProjects)
-  project: Project;
+  project?: Project;
 }
