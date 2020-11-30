@@ -18,24 +18,10 @@ function ProjectForm() {
           name: Yup.string().required("Required from yup"),
         })}
       >
-        {({
-          values,
-          handleSubmit,
-          handleChange,
-          handleBlur,
-          isSubmitting,
-          errors,
-          touched,
-        }) => (
+        {({ handleSubmit, isSubmitting, errors, touched, getFieldProps }) => (
           <form onSubmit={handleSubmit}>
             <div className="control">
-              <input
-                type="text"
-                name="name"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.name}
-              />
+              <input type="text" {...getFieldProps("name")} />
               {touched.name && errors.name ? (
                 <div className="error" role="alert">
                   {errors.name}
