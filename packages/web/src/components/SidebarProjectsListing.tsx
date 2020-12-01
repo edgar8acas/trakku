@@ -2,6 +2,7 @@ import * as React from "react";
 import { NavLink, useRouteMatch } from "react-router-dom";
 import { Project } from "../typings";
 import request from "../utilities/request";
+import { DashboardNav, NavItem } from "./DashboardNav";
 
 interface SidebarProjectsListingProps {
   show: boolean;
@@ -20,15 +21,16 @@ const SidebarProjectsListing: React.FC<SidebarProjectsListingProps> = ({
   }, []);
 
   return (
-    <nav>
-      <ul className={`Projects-sidebar-listing ${show ? "active" : ""}`}>
-        {projects.map((p) => (
-          <li key={p.id}>
-            <NavLink to={`${path}/projects/${p.id}`}>{p.name}</NavLink>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <DashboardNav
+      className={`Projects-sidebar-listing ${show ? "active" : ""}`}
+    >
+      {projects.map((p) => (
+        <NavItem
+          key={p.id}
+          link={<NavLink to={`${path}/projects/${p.id}`}>{p.name}</NavLink>}
+        />
+      ))}
+    </DashboardNav>
   );
 };
 

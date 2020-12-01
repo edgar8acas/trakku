@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink, Route, Switch, useRouteMatch } from "react-router-dom";
+import { DashboardNav, NavItem } from "../components/DashboardNav";
 import Projects from "../components/Projects";
 import SidebarProjectsListing from "../components/SidebarProjectsListing";
 import { logout } from "../slices/auth";
@@ -14,17 +15,14 @@ function Dashboard() {
       <div className="Sidebar">
         <h1>Logo</h1>
         <button onClick={() => dispatch(logout())}>Logout</button>
-        <nav>
-          <ul>
-            <li>
-              <NavLink to={`${url}/projects`}>Projects</NavLink>
-              <button onClick={() => setShowProjects((prev) => !prev)}>
-                Show projects
-              </button>
-              <SidebarProjectsListing show={showProjects} />
-            </li>
-          </ul>
-        </nav>
+        <DashboardNav>
+          <NavItem
+            link={<NavLink to={`${url}/projects`}>Projects</NavLink>}
+            onClick={() => setShowProjects(!showProjects)}
+          />
+          <SidebarProjectsListing show={showProjects} />
+          <NavItem link={<NavLink to={`${url}/issues`}>Issues</NavLink>} />
+        </DashboardNav>
       </div>
       <section className="Main">
         <header className="Main-header">

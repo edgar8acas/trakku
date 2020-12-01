@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Navigation() {
   return (
     <nav className="Navigation">
-      <ul>
+      <ul className="nav">
         <li>
           <Link to="/signin" className="Navigation--register">
             Sign in
