@@ -15,14 +15,14 @@ export const DashboardNav: React.FC<DashboardNavProps> = ({
 };
 
 type NavItemProps = {
-  link: React.ReactNode;
+  component: React.ReactNode;
   onClick?: () => void;
 };
 
-export const NavItem: React.FC<NavItemProps> = ({ link, onClick }) => {
+export const NavItem: React.FC<NavItemProps> = ({ component, onClick }) => {
   return (
     <li className="Nav-item" onClick={onClick}>
-      {link}
+      {component}
     </li>
   );
 };

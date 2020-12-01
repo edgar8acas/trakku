@@ -18,7 +18,7 @@ const ProjectDetails: React.FC<{}> = () => {
 
   return (
     <div>
-      <h2>Project details</h2> <h4 style={{ fontFamily: "monospace" }}>{id}</h4>
+      <h2>Project details</h2>
       <p>{project.name}</p>
     </div>
   );

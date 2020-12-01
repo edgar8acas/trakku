@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink, Route, Switch, useRouteMatch } from "react-router-dom";
@@ -5,6 +7,7 @@ import { DashboardNav, NavItem } from "../components/DashboardNav";
 import Projects from "../components/Projects";
 import SidebarProjectsListing from "../components/SidebarProjectsListing";
 import { logout } from "../slices/auth";
+import Logo from "../assets/Logo";
 
 function Dashboard() {
   const dispatch = useDispatch();
@@ -13,16 +16,21 @@ function Dashboard() {
   return (
     <div className="Dashboard">
       <div className="Sidebar">
-        <h1>Logo</h1>
-        <button onClick={() => dispatch(logout())}>Logout</button>
+        <div className="Logo-wrapper">
+          <Logo />
+        </div>
         <DashboardNav>
           <NavItem
-            link={<NavLink to={`${url}/projects`}>Projects</NavLink>}
+            component={<NavLink to={`${url}/projects`}>Projects</NavLink>}
             onClick={() => setShowProjects(!showProjects)}
           />
           <SidebarProjectsListing show={showProjects} />
-          <NavItem link={<NavLink to={`${url}/issues`}>Issues</NavLink>} />
+          <NavItem component={<NavLink to={`${url}/issues`}>Issues</NavLink>} />
         </DashboardNav>
+        <button onClick={() => dispatch(logout())} className="Sidebar-Logout">
+          Logout
+          <FontAwesomeIcon icon={faSignOutAlt} />
+        </button>
       </div>
       <section className="Main">
         <header className="Main-header">

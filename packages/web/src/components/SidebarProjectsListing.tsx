@@ -20,14 +20,17 @@ const SidebarProjectsListing: React.FC<SidebarProjectsListingProps> = ({
     });
   }, []);
 
+  if (!show) return null;
   return (
-    <DashboardNav
-      className={`Projects-sidebar-listing ${show ? "active" : ""}`}
-    >
-      {projects.map((p) => (
+    <DashboardNav className="Projects-sidebar-listing">
+      {projects.map((project) => (
         <NavItem
-          key={p.id}
-          link={<NavLink to={`${path}/projects/${p.id}`}>{p.name}</NavLink>}
+          key={project.id}
+          component={
+            <NavLink to={`${path}/projects/${project.id}`}>
+              {project.name}
+            </NavLink>
+          }
         />
       ))}
     </DashboardNav>
