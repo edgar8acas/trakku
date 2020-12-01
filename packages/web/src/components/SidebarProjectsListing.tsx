@@ -23,7 +23,7 @@ const SidebarProjectsListing: React.FC<SidebarProjectsListingProps> = ({
     <nav>
       <ul className={`Projects-sidebar-listing ${show ? "active" : ""}`}>
         {projects.map((p) => (
-          <li>
+          <li key={p.id}>
             <NavLink to={`${path}/projects/${p.id}`}>{p.name}</NavLink>
           </li>
         ))}
