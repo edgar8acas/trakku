@@ -5,7 +5,7 @@
   ],
   "scripts": {
     "dev": "lerna run --parallel dev",
-    "serve:server": "lerna run serve --scope=@wt/server"
+    "serve:server": "lerna run serve --parallel --scope=@wt/server"
   },
   "devDependencies": {
     "lerna": "^3.22.1"
