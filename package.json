@@ -3,6 +3,7 @@
   "workspaces": [
     "packages/*"
   ],
+
   "scripts": {
     "dev": "lerna run --parallel dev",
     "serve:server": "lerna run serve --scope=@wt/server"
