@@ -3,6 +3,13 @@
   "workspaces": [
     "packages/*"
   ],
+<<<<<<< Updated upstream
+=======
+  "scripts": {
+    "dev": "lerna run --parallel dev",
+    "serve:server": "lerna run serve --scope=@wt/server"
+  },
+>>>>>>> Stashed changes
   "devDependencies": {
     "lerna": "^3.22.1"
   }
