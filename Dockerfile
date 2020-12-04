@@ -4,12 +4,13 @@ WORKDIR /wt
 
 ENV PORT=5000
 
+
+COPY ./lerna.json .
 COPY ./package.json .
-COPY ./packages/server/package.json ./packages/server/
+COPY ./packages/server ./packages/server
 
 RUN yarn install
-
-COPY ./packages/server/dist ./packages/server/dist
+RUN yarn build:server
 
 WORKDIR /wt/packages/server
 
