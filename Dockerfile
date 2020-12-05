@@ -14,5 +14,6 @@ RUN yarn build:server
 
 WORKDIR /wt/packages/server
 
+ENV NODE_ENV production
 EXPOSE 5000
 CMD ["node", "dist/src/index.js"]
