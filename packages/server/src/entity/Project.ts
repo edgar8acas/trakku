@@ -1,12 +1,6 @@
-import {
-  Column,
-  Entity,
-  ManyToMany,
-  OneToMany,
-  PrimaryGeneratedColumn,
-} from "typeorm";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Issue } from "./Issue";
-import { User } from "./User";
+import { UserToProject } from "./UserToProject";
 
 @Entity()
 export class Project {
@@ -18,10 +12,9 @@ export class Project {
   })
   name: string;
 
-  @ManyToMany(() => User, (user) => user.projects)
-  users: User[];
+  @OneToMany((type) => UserToProject, (userToProject) => userToProject.project)
+  userToProjects: UserToProject[];
 
   @OneToMany(() => Issue, (issue) => issue.project)
   issues: Issue[];
-  //TODO: Add issues relation
 }

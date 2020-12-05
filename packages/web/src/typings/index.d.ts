@@ -32,3 +32,8 @@ export interface RootState {
 }
 
 export type AppThunk = ThunkAction<void, RootState, unknown, Action<string>>;
+
+export type Project = {
+  name: string;
+  id: string;
+};
