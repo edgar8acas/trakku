@@ -1,3 +1,5 @@
 node_modules
 requests.http
 packages/server/dist
+# Local Netlify folder
+.netlify
