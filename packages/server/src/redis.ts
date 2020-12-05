@@ -12,3 +12,8 @@ const getConnection = () => {
 };
 
 export const redis = getConnection();
+
+redis.on("error", () => {
+  console.log("FROM ERROR [NODE_ENV]: ", process.env.NODE_ENV);
+  console.log("FROM ERROR [REDIS_URL]: ", process.env.REDIS_URL);
+});
