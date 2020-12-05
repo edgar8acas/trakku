@@ -1,6 +1,14 @@
 import Redis from "ioredis";
 
-export const redis =
-  process.env.NODE_ENV === "production"
-    ? new Redis(process.env.REDIS_URL)
-    : new Redis();
+const getConnection = () => {
+  console.log("NODE_ENV: " + process.env.NODE_ENV);
+
+  if (process.env.NODE_ENV === "production") {
+    console.log("REDIS_URL: " + process.env.REDIS_URL);
+    return new Redis(process.env.REDIS_URL);
+  }
+
+  return new Redis();
+};
+
+export const redis = getConnection();
