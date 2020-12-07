@@ -41,7 +41,9 @@ export const startServer = function (router: Router): Application {
       },
     })
   );
-
+  app.use((req, res, next) => {
+    console.log("PROTOCOL: ", req.protocol);
+  });
   app.use("/api", router);
 
   app.use(logErrors);
