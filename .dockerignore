@@ -2,3 +2,4 @@
 !lerna.json
 !package.json
 !packages/server
+!ormconfig.json

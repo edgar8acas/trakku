@@ -8,6 +8,7 @@ ENV PORT=5000
 COPY ./lerna.json .
 COPY ./package.json .
 COPY ./packages/server ./packages/server
+COPY ./ormconfig.json .
 
 RUN yarn install
 RUN yarn build:server
