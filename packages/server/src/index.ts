@@ -1,4 +1,5 @@
 import "reflect-metadata";
+require("dotenv-safe").config();
 import { createOrmConnection } from "./helpers/createOrmConnection";
 import { startServer } from "./startServer";
 import api from "./controller";

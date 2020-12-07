@@ -3,3 +3,4 @@ requests.http
 packages/server/dist
 # Local Netlify folder
 .netlify
+.env

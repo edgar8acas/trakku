@@ -2,7 +2,7 @@ import express, { Application, Router } from "express";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import morgan from "morgan";
-const cors = require("cors");
+import cors from "cors";
 
 import { logErrors, defaultErrorHandler } from "./middleware/errors";
 import { redis } from "./redis";
@@ -16,7 +16,12 @@ const SESSION_SECRET = "SoME_S3CR3t";
 export const startServer = function (router: Router): Application {
   const app = express();
 
-  // app.use(cors());
+  const corsOptions = {
+    credentials: true,
+    origin: process.env.NODE_ENV === "test" ? "*" : process.env.FRONTEND_HOST,
+  };
+
+  app.use(cors(corsOptions));
   app.use(bodyParser.json());
   app.use(cookieParser());
   app.use(morgan("dev"));
