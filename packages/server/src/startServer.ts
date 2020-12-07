@@ -19,6 +19,7 @@ export const startServer = function (router: Router): Application {
   const corsOptions = {
     credentials: true,
     origin: process.env.NODE_ENV === "test" ? "*" : process.env.FRONTEND_HOST,
+    methods: ["GET", "POST", "PUT", "DELETE"],
   };
 
   app.use(cors(corsOptions));

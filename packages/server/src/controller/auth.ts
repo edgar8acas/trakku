@@ -14,7 +14,7 @@ AuthController.post(
   "/login",
   asyncHandler(async (req, res, next) => {
     const { email, password } = req.body;
-
+    console.log("IP: " + req.ip);
     if (email && password) {
       const user = await getCustomRepository(UserRepository).findOne({
         email,
