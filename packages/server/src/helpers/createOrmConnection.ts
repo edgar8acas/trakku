@@ -6,6 +6,7 @@ import { UserToProject } from "../entity/UserToProject";
 
 export const createOrmConnection = async () => {
   const options = await getConnectionOptions(process.env.NODE_ENV);
+  console.log("NODE_ENV: ", process.env.NODE_ENV);
 
   return process.env.NODE_ENV === "production"
     ? createConnection({
