@@ -12,6 +12,7 @@ import connectRedis from "connect-redis";
 
 const RedisStore = connectRedis(session);
 const SESSION_SECRET = "SoME_S3CR3t";
+const isProduction = process.env.NODE_ENV === "production";
 
 export const startServer = function (router: Router): Application {
   const app = express();
@@ -26,10 +27,16 @@ export const startServer = function (router: Router): Application {
   app.use(bodyParser.json());
   app.use(cookieParser());
   app.use(morgan("dev"));
-  if (process.env.NODE_ENV === "production") {
+
+  const cookie = {
+    maxAge: 1000 * 60 * 60 * 24 * 365, // 1 year
+    httpOnly: true,
+    secure: isProduction,
+  };
+
+  if (isProduction) {
     app.set("trust proxy", 1);
   }
-
   app.use(
     session({
       store: new RedisStore({ client: redis, prefix: redisSessionPrefix }),
@@ -37,14 +44,10 @@ export const startServer = function (router: Router): Application {
       resave: false,
       saveUninitialized: false,
       name: "sidwt",
-      cookie: {
-        maxAge: 1000 * 60 * 60 * 24 * 365, // 1 year
-        httpOnly: true,
-        secure: process.env.NODE_ENV === "production",
-        sameSite: "none",
-      },
+      cookie,
     })
   );
+
   app.use((req, res, next) => {
     console.log("PROTOCOL: ", req.protocol);
     next();

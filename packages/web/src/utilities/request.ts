@@ -1,4 +1,4 @@
-const apiUrl = process.env.REACT_APP_SERVER_URL || "";
+const apiUrl = process.env.REACT_APP_SERVER_URL;
 
 function request(endpoint: string, options?: any) {
   const headers = { "Content-Type": "application/json" };
