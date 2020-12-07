@@ -35,7 +35,8 @@ export const startServer = function (router: Router): Application {
       name: "sidwt",
       cookie: {
         maxAge: 1000 * 60 * 60 * 24 * 365, // 1 year
-        httpOnly: false,
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
       },
     })
   );
