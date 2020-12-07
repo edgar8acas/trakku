@@ -26,6 +26,9 @@ export const startServer = function (router: Router): Application {
   app.use(bodyParser.json());
   app.use(cookieParser());
   app.use(morgan("dev"));
+  if (process.env.NODE_ENV === "production") {
+    app.set("trust proxy", 1);
+  }
 
   app.use(
     session({
@@ -43,6 +46,7 @@ export const startServer = function (router: Router): Application {
   );
   app.use((req, res, next) => {
     console.log("PROTOCOL: ", req.protocol);
+    next();
   });
   app.use("/api", router);
 
