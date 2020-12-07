@@ -5,6 +5,7 @@ function request(endpoint: string, options?: any) {
 
   const config: RequestInit = {
     method: "GET",
+    credentials: "include",
     headers: {
       ...headers,
       ...options?.headers,
