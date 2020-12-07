@@ -1,4 +1,4 @@
-import express, { Application, Router } from "express";
+import express, { Application, CookieOptions, Router } from "express";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import morgan from "morgan";
@@ -7,7 +7,7 @@ import cors from "cors";
 import { logErrors, defaultErrorHandler } from "./middleware/errors";
 import { redis } from "./redis";
 import { redisSessionPrefix } from "./constants";
-import session from "express-session";
+import session, { SessionOptions } from "express-session";
 import connectRedis from "connect-redis";
 
 const RedisStore = connectRedis(session);
@@ -28,7 +28,7 @@ export const startServer = function (router: Router): Application {
   app.use(cookieParser());
   app.use(morgan("dev"));
 
-  const cookie = {
+  const cookie: CookieOptions = {
     maxAge: 1000 * 60 * 60 * 24 * 365, // 1 year
     httpOnly: true,
     secure: isProduction,
@@ -36,6 +36,7 @@ export const startServer = function (router: Router): Application {
 
   if (isProduction) {
     app.set("trust proxy", 1);
+    cookie.sameSite = "none";
   }
   app.use(
     session({
