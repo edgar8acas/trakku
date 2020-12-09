@@ -1,6 +1,7 @@
 import React, { SyntheticEvent, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { Button } from "../components/Controls/Button";
 import { loginUser, selectAuth } from "../slices/auth";
 
 function Login() {
@@ -65,16 +66,13 @@ function Login() {
               />
               <label htmlFor="stay-logged-in">Remember me</label>
             </div>
-            <button className="button" type="submit">
-              Sign in
-            </button>
+            <Button type="submit" label="Sign in" primary />
           </div>
         </form>
         <div className="Login__register-actions">
           <p>Don't have an account?</p>
-          <button className="button" onClick={() => history.replace("/signup")}>
-            Sign up
-          </button>
+
+          <Button label="Sign up" onClick={() => history.replace("/signup")} />
         </div>
       </div>
     </div>

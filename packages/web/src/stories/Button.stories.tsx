@@ -32,3 +32,9 @@ Large.args = {
   size: "large",
   label: "Button",
 };
+
+export const Link = Template.bind({});
+Link.args = {
+  label: "Button",
+  isLink: true,
+};

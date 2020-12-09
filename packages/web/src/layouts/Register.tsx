@@ -1,6 +1,7 @@
 import React, { SyntheticEvent, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { Button } from "../components/Controls/Button";
 import { signUpUser } from "../slices/auth";
 
 function Register() {
@@ -70,18 +71,17 @@ function Register() {
             />
           </div>
           <div className="Register-form__actions">
-            <button className="button" type="submit">
-              Sign up
-            </button>
+            <Button type="submit" label="Sign up" primary />
           </div>
         </form>
         <div className="Register__go-to-signin">
           <p>
             Already have an account?
-            <button className="link" onClick={() => history.replace("/signin")}>
-              Sign in
-            </button>
-            .
+            <Button
+              label="Sign in"
+              isLink
+              onClick={() => history.replace("/signin")}
+            />
           </p>
         </div>
       </div>
