@@ -26,7 +26,7 @@ export const startServer = function (router: Router): Application {
   app.use(cors(corsOptions));
   app.use(bodyParser.json());
   app.use(cookieParser());
-  app.use(morgan("dev"));
+  app.use(morgan("dev") as any);
 
   const cookie: CookieOptions = {
     maxAge: 1000 * 60 * 60 * 24 * 365, // 1 year
