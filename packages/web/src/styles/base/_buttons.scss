@@ -7,7 +7,6 @@
   text-decoration: none;
   font-size: 1rem;
   padding: 0.5rem 1.2rem;
-  margin: 0.3rem;
   font-weight: 500;
   vertical-align: middle;
   text-align: center;
@@ -38,4 +37,26 @@
 
 #{$buttons}.button--large {
   padding: 0.7rem 1.5rem;
+}
+
+#{$buttons}.button--link {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#{$buttons}.button--link {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-right: 0.3rem;
+  margin-left: 0.3rem;
+
+  &.button--primary {
+    color: $primary;
+  }
 }

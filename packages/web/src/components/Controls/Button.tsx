@@ -5,7 +5,8 @@ export interface ButtonProps {
   primary?: boolean;
   label: string;
   disabled?: boolean;
-  type: string;
+  type?: string;
+  isLink?: boolean;
   onClick?: () => void;
 }
 
@@ -14,13 +15,15 @@ export const Button: React.FC<ButtonProps> = ({
   primary = false,
   type = "button",
   disabled = false,
+  isLink = false,
   label,
   ...props
 }) => {
   const mode = primary ? "button--primary" : "button--secondary";
+  const link = isLink ? "button--link" : null;
   return (
     <button
-      className={["button", `button--${size}`, mode].join(" ")}
+      className={["button", `button--${size}`, mode, link].join(" ")}
       {...props}
     >
       {label}
