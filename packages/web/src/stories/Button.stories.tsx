@@ -1,18 +1,34 @@
-// import * as React from "react";
-// import { Meta, Story } from "@storybook/react/types-6-0";
-// import { Button, ButtonProps } from "../components/Controls/Button";
+import * as React from "react";
+import { Meta, Story } from "@storybook/react/types-6-0";
+import { Button, ButtonProps } from "../components/Controls/Button";
 
-// export default {
-//   title: "Button",
-//   component: Button,
-// } as Meta;
+export default {
+  title: "Button",
+  component: Button,
+} as Meta;
 
-// const Template: Story<ButtonProps> = (args) => <Button {...args} />;
+const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 
-// export const Primary = Template.bind({});
-// Primary.args = {
-//   primary: true,
-//   label: "Button",
-// };
+export const Primary = Template.bind({});
+Primary.args = {
+  primary: true,
+  label: "Button",
+};
 
-export const something = {};
+export const Secondary = Template.bind({});
+Secondary.args = {
+  primary: false,
+  label: "Button",
+};
+
+export const Small = Template.bind({});
+Small.args = {
+  size: "small",
+  label: "Button",
+};
+
+export const Large = Template.bind({});
+Large.args = {
+  size: "large",
+  label: "Button",
+};
