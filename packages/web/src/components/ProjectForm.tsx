@@ -1,7 +1,9 @@
-import { Formik } from "formik";
+import { Field, Form, Formik } from "formik";
 import React from "react";
 import request from "../utilities/request";
 import * as Yup from "yup";
+import Input from "./Controls/Input";
+
 function ProjectForm() {
   return (
     <div>
@@ -16,19 +18,18 @@ function ProjectForm() {
           // TODO: Handle errors when creating form
         }}
         validationSchema={Yup.object({
-          name: Yup.string().required("Required from yup"),
+          name: Yup.string().required("A project must have a name"),
         })}
       >
-        {({ handleSubmit, isSubmitting, errors, touched, getFieldProps }) => (
-          <form onSubmit={handleSubmit}>
-            <div className="control">
-              <input type="text" {...getFieldProps("name")} />
-              {touched.name && errors.name ? (
-                <div className="error" role="alert">
-                  {errors.name}
-                </div>
-              ) : null}
-            </div>
+        {({ isSubmitting, errors }) => (
+          <Form>
+            <Field
+              type="text"
+              name="name"
+              label="Name"
+              placeholder="Project name"
+              component={Input}
+            />
 
             <button
               type="submit"
@@ -37,7 +38,7 @@ function ProjectForm() {
             >
               Create
             </button>
-          </form>
+          </Form>
         )}
       </Formik>
     </div>
