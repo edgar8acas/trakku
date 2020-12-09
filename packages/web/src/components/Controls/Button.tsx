@@ -4,21 +4,23 @@ export interface ButtonProps {
   size?: "small" | "medium" | "large";
   primary?: boolean;
   label: string;
-  disabled: boolean;
+  disabled?: boolean;
+  type: string;
   onClick?: () => void;
 }
 
 export const Button: React.FC<ButtonProps> = ({
   size = "medium",
   primary = false,
+  type = "button",
+  disabled = false,
   label,
   ...props
 }) => {
-  const type = primary ? "button--primary" : "button--secondary";
+  const mode = primary ? "button--primary" : "button--secondary";
   return (
     <button
-      type="button"
-      className={["button", `button--${size}`, type].join(" ")}
+      className={["button", `button--${size}`, mode].join(" ")}
       {...props}
     >
       {label}
