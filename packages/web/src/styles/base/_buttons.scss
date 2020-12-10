@@ -6,7 +6,7 @@
   background: $primary;
   text-decoration: none;
   font-size: 1rem;
-  padding: 0.5rem 1.2rem;
+  padding: 0.5rem 1.4rem;
   font-weight: 500;
   vertical-align: middle;
   text-align: center;
@@ -16,12 +16,6 @@
 
 #{$buttons}:hover {
   background: darken($primary, 5%);
-}
-
-#{$buttons}:disabled {
-  background: $accent-gray;
-  cursor: not-allowed;
-  border: 2px solid darken($accent-gray, 5%);
 }
 
 #{$buttons}.button--secondary {
@@ -36,7 +30,7 @@
 }
 
 #{$buttons}.button--large {
-  padding: 0.7rem 1.5rem;
+  padding: 0.7rem 1.9rem;
 }
 
 #{$buttons}.button--link {
@@ -58,5 +52,17 @@
 
   &.button--primary {
     color: $primary;
+  }
+}
+
+#{$buttons}:disabled {
+  background: $accent-gray;
+  color: $secondary;
+  cursor: not-allowed;
+
+  &.button--secondary {
+    border: none;
+    background: lighten($accent-gray, $amount: 20%);
+    color: darken($accent-gray, 20%);
   }
 }

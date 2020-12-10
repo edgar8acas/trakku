@@ -3,7 +3,7 @@ import * as React from "react";
 export interface ButtonProps {
   size?: "small" | "medium" | "large";
   primary?: boolean;
-  label: string;
+  label?: string;
   disabled?: boolean;
   type?: string;
   isLink?: boolean;
@@ -14,7 +14,6 @@ export const Button: React.FC<ButtonProps> = ({
   size = "medium",
   primary = false,
   type = "button",
-  disabled = false,
   isLink = false,
   label,
   ...props

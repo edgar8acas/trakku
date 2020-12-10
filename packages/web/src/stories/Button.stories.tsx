@@ -38,3 +38,9 @@ Link.args = {
   label: "Button",
   isLink: true,
 };
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  label: "Button",
+  disabled: true,
+};
