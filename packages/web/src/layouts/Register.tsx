@@ -40,7 +40,7 @@ function Register() {
           })}
         >
           {({ isSubmitting, errors }) => (
-            <Form className="Register-form">
+            <Form className="Register-form form">
               <Field
                 type="text"
                 id="name"
@@ -77,6 +77,7 @@ function Register() {
                 <Button
                   type="submit"
                   label="Sign up"
+                  size="large"
                   primary
                   disabled={
                     isSubmitting || Boolean(Object.entries(errors).length > 0)

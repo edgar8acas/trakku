@@ -1,17 +1,20 @@
 .control {
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.2rem;
 }
 
 .control label {
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
+  display: inline-block;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  color: $dark-gray;
 }
 
 .control input {
   border: 1px solid $accent-gray;
+  color: $dark-gray;
   border-radius: 3px;
-  padding: 0.4rem;
+  padding: 0.5rem;
   font-size: 1rem;
 }
 
@@ -31,5 +34,6 @@
 
 .control .error {
   color: red;
-  padding: 0.3em 0em;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
 }

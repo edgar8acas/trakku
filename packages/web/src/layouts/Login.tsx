@@ -37,7 +37,7 @@ function Login() {
           onSubmit={handleSubmit}
         >
           {({ isSubmitting, errors }) => (
-            <Form className="Login-form">
+            <Form className="Login-form form">
               <Field
                 type="email"
                 id="email"
@@ -58,6 +58,7 @@ function Login() {
                 <Button
                   type="submit"
                   label="Sign in"
+                  size="large"
                   primary
                   disabled={isSubmitting || Object.entries(errors).length > 0}
                 />
@@ -67,7 +68,11 @@ function Login() {
         </Formik>
         <div className="Login--register-actions">
           <span>Don't have an account?</span>
-          <Button label="Sign up" onClick={() => history.replace("/signup")} />
+          <Button
+            label="Sign up"
+            size="large"
+            onClick={() => history.replace("/signup")}
+          />
         </div>
       </div>
     </div>
