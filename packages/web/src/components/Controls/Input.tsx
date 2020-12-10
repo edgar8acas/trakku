@@ -13,7 +13,7 @@ export const Input: React.FC<FieldProps<any> & InputProps> = ({
 }) => {
   return (
     <div className="control">
-      <label>{label}</label>
+      <label htmlFor={field.name}>{label}</label>
       <input {...field} {...props} />
       {touched[field.name] && errors[field.name] ? (
         <div className="error" role="alert">

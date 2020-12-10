@@ -1,26 +1,25 @@
-import React, { SyntheticEvent, useState } from "react";
+import { Field, Form, Formik, FormikValues } from "formik";
+import React from "react";
+import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { Button } from "../components/Controls/Button";
+import { Input } from "../components/Controls/Input";
 import { signUpUser } from "../slices/auth";
 
 function Register() {
-  const [user, setUser] = useState({
+  const initialValues = {
     email: "",
     password: "",
     name: "",
     lastname: "",
-  });
+  };
 
   const dispatch = useDispatch();
   const history = useHistory();
-  function handleChange(event: any) {
-    const { name, value } = event.target;
-    setUser((prevUser) => ({ ...prevUser, [name]: value }));
-  }
-  function handleSubmit(event: SyntheticEvent) {
-    event.preventDefault();
-    dispatch(signUpUser(user));
+
+  function handleSubmit(values: FormikValues) {
+    dispatch(signUpUser(values));
   }
 
   return (
@@ -29,51 +28,64 @@ function Register() {
         <header>
           <h1>Sign up to We Track</h1>
         </header>
-        <form className="Register-form" onSubmit={handleSubmit}>
-          <div className="control">
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={user.name}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="control">
-            <label htmlFor="lastname">Lastname</label>
-            <input
-              type="text"
-              id="lastname"
-              name="lastname"
-              value={user.lastname}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="control">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={user.email}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="control">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              value={user.password}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="Register-form__actions">
-            <Button type="submit" label="Sign up" primary />
-          </div>
-        </form>
+
+        <Formik
+          initialValues={initialValues}
+          onSubmit={handleSubmit}
+          validationSchema={Yup.object({
+            name: Yup.string().required("Required."),
+            lastname: Yup.string().required("Required."),
+            email: Yup.string().email("Invalid email").required("Required."),
+            password: Yup.string().required("Required."),
+          })}
+        >
+          {({ isSubmitting, errors }) => (
+            <Form className="Register-form">
+              <Field
+                type="text"
+                id="name"
+                name="name"
+                label="Name"
+                component={Input}
+              />
+
+              <Field
+                type="text"
+                id="lastname"
+                name="lastname"
+                label="Last name"
+                component={Input}
+              />
+
+              <Field
+                type="email"
+                id="email"
+                name="email"
+                label="Email"
+                component={Input}
+              />
+
+              <Field
+                type="password"
+                id="password"
+                name="password"
+                label="Password"
+                component={Input}
+              />
+
+              <div className="Register-form__actions">
+                <Button
+                  type="submit"
+                  label="Sign up"
+                  primary
+                  disabled={
+                    isSubmitting || Boolean(Object.entries(errors).length > 0)
+                  }
+                />
+              </div>
+            </Form>
+          )}
+        </Formik>
         <div className="Register__go-to-signin">
           <p>
             Already have an account?
