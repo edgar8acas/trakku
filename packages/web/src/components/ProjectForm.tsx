@@ -2,7 +2,8 @@ import { Field, Form, Formik } from "formik";
 import React from "react";
 import request from "../utilities/request";
 import * as Yup from "yup";
-import Input from "./Controls/Input";
+import { Input } from "./Controls/Input";
+import { Button } from "./Controls/Button";
 
 function ProjectForm() {
   return (
@@ -31,13 +32,12 @@ function ProjectForm() {
               component={Input}
             />
 
-            <button
+            <Button
               type="submit"
+              primary
               disabled={isSubmitting || Boolean(errors.name)}
-              className="button"
-            >
-              Create
-            </button>
+              label="Create"
+            />
           </Form>
         )}
       </Formik>

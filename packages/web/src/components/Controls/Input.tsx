@@ -1,7 +1,11 @@
 import { FieldProps } from "formik";
 import * as React from "react";
 
-const Input: React.FC<FieldProps<any> & { label: string }> = ({
+export interface InputProps {
+  label?: string;
+}
+
+export const Input: React.FC<FieldProps<any> & InputProps> = ({
   field,
   form: { touched, errors },
   label,
@@ -19,5 +23,3 @@ const Input: React.FC<FieldProps<any> & { label: string }> = ({
     </div>
   );
 };
-
-export default Input;
