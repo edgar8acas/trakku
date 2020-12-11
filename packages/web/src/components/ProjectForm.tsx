@@ -5,10 +5,13 @@ import * as Yup from "yup";
 import { Input } from "./Controls/Input";
 import { Button } from "./Controls/Button";
 
-function ProjectForm() {
+export interface ProjectFormProps {
+  onCancel?(): void;
+}
+
+export const ProjectForm: React.FC<ProjectFormProps> = ({ onCancel }) => {
   return (
     <div>
-      <h2>Create project</h2>
       <Formik
         initialValues={{ name: "" }}
         onSubmit={async (values) => {
@@ -19,7 +22,7 @@ function ProjectForm() {
           // TODO: Handle errors when creating form
         }}
         validationSchema={Yup.object({
-          name: Yup.string().required("A project must have a name"),
+          name: Yup.string().required("Required."),
         })}
       >
         {({ isSubmitting, errors }) => (
@@ -31,7 +34,9 @@ function ProjectForm() {
               placeholder="Project name"
               component={Input}
             />
-
+            {onCancel && (
+              <Button type="button" label="Cancel" onClick={onCancel}></Button>
+            )}
             <Button
               type="submit"
               primary
@@ -43,6 +48,4 @@ function ProjectForm() {
       </Formik>
     </div>
   );
-}
-
-export default ProjectForm;
+};

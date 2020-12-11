@@ -1,11 +1,13 @@
 .Dashboard {
   display: grid;
+  background-color: $lightGray;
   height: 100vh;
   grid-template: 1fr / 200px 1fr;
 }
 
 .Main {
   display: grid;
+  padding: 1rem;
   grid-template: auto 1fr / 1fr;
 }
 
