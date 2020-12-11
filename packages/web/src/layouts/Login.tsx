@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import { Button } from "../components/Controls/Button";
 import { Input } from "../components/Controls/Input";
 import { loginUser, selectAuth } from "../slices/auth";
+import { Alert } from "../components/Alert";
 
 function Login() {
   const initialValues = {
@@ -17,8 +18,8 @@ function Login() {
   const dispatch = useDispatch();
   const { error } = useSelector(selectAuth);
 
-  function handleSubmit(user: FormikValues) {
-    dispatch(loginUser(user));
+  async function handleSubmit(user: FormikValues) {
+    await dispatch(loginUser(user));
   }
 
   return (
@@ -26,7 +27,7 @@ function Login() {
       <div className="Login-wrapper center-form">
         <header>
           <h1>Sign in to We Track</h1>
-          {error}
+          {error ? <Alert message={error} type="error" /> : null}
         </header>
         <Formik
           initialValues={initialValues}
