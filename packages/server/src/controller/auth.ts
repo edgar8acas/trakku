@@ -21,7 +21,7 @@ AuthController.post(
       });
 
       if (!user) {
-        return next(createError(400, "The user could not be found"));
+        return next(createError(400, "Invalid username or password."));
       }
 
       if (await isPasswordCorrect(password, user.password || "")) {
@@ -32,9 +32,9 @@ AuthController.post(
           data: { user: removeUserPassword(user), sessionID: req.sessionID },
         });
       }
-      return next(createError(401, "Failed to authenticate user"));
+      return next(createError(401, "Invalid username or password."));
     }
-    return next(createError(400, "Wrong email or password"));
+    return next(createError(400, "Invalid username or password."));
   })
 );
 
