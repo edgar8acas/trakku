@@ -20,9 +20,8 @@ function Projects() {
             active={createProjectModal}
             onClose={() => setCreateProjectModal(false)}
             title="New project"
-          >
-            <ProjectForm />
-          </Modal>
+            render={(onClose) => <ProjectForm onCancel={onClose} />}
+          ></Modal>
         </Route>
         <Route exact path={`${path}/:id`} component={ProjectDetails}></Route>
       </Switch>
