@@ -24,7 +24,18 @@ function Dashboard() {
             component={<NavLink to={`${url}/projects`}>Projects</NavLink>}
             onClick={() => setShowProjects(!showProjects)}
           />
-          <SidebarProjectsListing show={showProjects} />
+          <Switch>
+            <Route
+              path={`${path}/projects`}
+              render={({ location }) => (
+                <SidebarProjectsListing
+                  location={location}
+                  show={showProjects}
+                />
+              )}
+            />
+          </Switch>
+
           <NavItem component={<NavLink to={`${url}/issues`}>Issues</NavLink>} />
         </DashboardNav>
         <button onClick={() => dispatch(logout())} className="Sidebar-Logout">
@@ -40,7 +51,7 @@ function Dashboard() {
         <section className="Main-container">
           <Switch>
             <Route exact path={path}>
-              Dashboard
+              <span>Dashboard {JSON.stringify(path)}</span>
             </Route>
             <Route path={`${path}/projects`} component={Projects}></Route>
           </Switch>

@@ -16,12 +16,18 @@ export const DashboardNav: React.FC<DashboardNavProps> = ({
 
 type NavItemProps = {
   component: React.ReactNode;
+  isSelected?: boolean;
   onClick?: () => void;
 };
 
-export const NavItem: React.FC<NavItemProps> = ({ component, onClick }) => {
+export const NavItem: React.FC<NavItemProps> = ({
+  component,
+  onClick,
+  isSelected = false,
+}) => {
+  const selected = isSelected ? "Nav-item--selected" : null;
   return (
-    <li className="Nav-item" onClick={onClick}>
+    <li className={["Nav-item", selected].join(" ")} onClick={onClick}>
       {component}
     </li>
   );

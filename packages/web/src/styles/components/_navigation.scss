@@ -42,3 +42,9 @@
   text-decoration: none;
   color: white;
 }
+
+.Nav-item--selected,
+.Nav-item:hover.Nav-item--selected {
+  background-color: $primary;
+  font-weight: 500;
+}

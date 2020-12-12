@@ -1,18 +1,27 @@
 import * as React from "react";
-import { NavLink, useRouteMatch } from "react-router-dom";
+import { matchPath, NavLink, useParams, useRouteMatch } from "react-router-dom";
 import { Project } from "../typings";
 import request from "../utilities/request";
 import { DashboardNav, NavItem } from "./DashboardNav";
 
 interface SidebarProjectsListingProps {
   show: boolean;
+  location: any;
+}
+
+interface MatchParams {
+  id: string;
 }
 
 const SidebarProjectsListing: React.FC<SidebarProjectsListingProps> = ({
   show,
+  location,
 }) => {
   const [projects, setProjects] = React.useState<Project[]>([]);
-  const { path } = useRouteMatch();
+
+  const matched = matchPath<MatchParams>(location.pathname, {
+    path: "/dashboard/projects/:id",
+  });
 
   React.useEffect(() => {
     request("api/projects").then(({ data: { projects } }) => {
@@ -26,8 +35,9 @@ const SidebarProjectsListing: React.FC<SidebarProjectsListingProps> = ({
       {projects.map((project) => (
         <NavItem
           key={project.id}
+          isSelected={matched?.params.id === project.id}
           component={
-            <NavLink to={`${path}/projects/${project.id}`}>
+            <NavLink to={`/dashboard/projects/${project.id}`}>
               {project.name}
             </NavLink>
           }
