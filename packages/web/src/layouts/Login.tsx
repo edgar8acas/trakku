@@ -7,6 +7,7 @@ import { Button } from "../components/Controls/Button";
 import { Input } from "../components/Controls/Input";
 import { loginUser, selectAuth } from "../slices/auth";
 import { Alert } from "../components/Alert";
+import HomeLogo from "../assets/HomeLogo";
 
 function Login() {
   const initialValues = {
@@ -26,9 +27,10 @@ function Login() {
     <div className="Login">
       <div className="Login-wrapper center-form">
         <header>
-          <h1>Sign in to We Track</h1>
-          {error ? <Alert message={error} type="error" /> : null}
+          <HomeLogo onClick={() => history.push("/")} className="Logo" />
+          <h2>Sign in</h2>
         </header>
+        {error ? <Alert message={error} type="error" /> : null}
         <Formik
           initialValues={initialValues}
           validationSchema={Yup.object({

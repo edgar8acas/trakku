@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import { Button } from "../components/Controls/Button";
 import { Input } from "../components/Controls/Input";
 import { signUpUser } from "../slices/auth";
+import HomeLogo from "../assets/HomeLogo";
 
 function Register() {
   const initialValues = {
@@ -26,7 +27,8 @@ function Register() {
     <div className="Register">
       <div className="Register-wrapper center-form">
         <header>
-          <h1>Sign up to We Track</h1>
+          <HomeLogo onClick={() => history.push("/")} className="Logo" />
+          <h2>Sign up</h2>
         </header>
 
         <Formik

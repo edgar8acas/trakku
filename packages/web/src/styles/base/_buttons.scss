@@ -22,6 +22,10 @@
   background: $secondary;
   color: $darkGray;
   border: 1px solid $darkGray;
+
+  &:hover {
+    background-color: $lightGray;
+  }
 }
 
 #{$buttons}.button--small {
