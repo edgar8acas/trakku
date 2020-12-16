@@ -2,8 +2,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { NavLink, Route, Switch, useRouteMatch } from "react-router-dom";
-import { DashboardNav, NavItem } from "../components/DashboardNav";
+import { Route, Switch, useRouteMatch } from "react-router-dom";
+import { DashboardNav, SidebarNavItem } from "../components/DashboardNav";
 import Projects from "../components/Projects";
 import SidebarProjectsListing from "../components/SidebarProjectsListing";
 import { logout } from "../slices/auth";
@@ -23,17 +23,22 @@ function Dashboard() {
       </div>
       <div className="Sidebar">
         <DashboardNav>
-          <NavItem to="/dashboard" exact activeClassName="Nav-item--selected">
+          <SidebarNavItem
+            to="/dashboard"
+            exact
+            activeClassName="Nav-item--selected"
+          >
             Dashboard
-          </NavItem>
+          </SidebarNavItem>
 
-          <NavItem
+          <SidebarNavItem
             to={`${url}/projects`}
             activeClassName="Nav-item--selected"
             onClick={() => setShowProjects(!showProjects)}
+            exact
           >
             Projects
-          </NavItem>
+          </SidebarNavItem>
           <Switch>
             <Route
               path={`${path}/projects`}
@@ -46,9 +51,12 @@ function Dashboard() {
             />
           </Switch>
 
-          <NavItem to={`${url}/issues`} activeClassName="Nav-item--selected">
+          <SidebarNavItem
+            to={`${url}/issues`}
+            activeClassName="Nav-item--selected"
+          >
             Issues
-          </NavItem>
+          </SidebarNavItem>
         </DashboardNav>
         <button onClick={() => dispatch(logout())} className="Sidebar-Logout">
           Logout

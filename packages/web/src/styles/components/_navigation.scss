@@ -21,9 +21,10 @@
   display: flex;
 }
 
-.nav > .Dashboard-Nav .Nav-item {
-  padding-left: 0.7rem;
+.Projects-sidebar-listing .Nav-item a {
+  padding-left: 1.4rem;
 }
+
 .Dashboard-Nav ul {
   flex-direction: column;
 }
@@ -39,6 +40,8 @@
 .Nav-item a {
   display: block;
   padding: 0.7rem;
+  font-size: 0.9rem;
+
   text-decoration: none;
   color: $gray;
 }

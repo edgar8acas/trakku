@@ -15,7 +15,7 @@ export const DashboardNav: React.FC<DashboardNavProps> = ({
   );
 };
 
-export const NavItem: React.FC<NavLinkProps> = (props) => {
+export const SidebarNavItem: React.FC<NavLinkProps> = (props) => {
   return (
     <li className={["Nav-item"].join(" ")}>
       <NavLink {...props} />

@@ -2,7 +2,7 @@ import * as React from "react";
 import { matchPath } from "react-router-dom";
 import { Project } from "../typings";
 import request from "../utilities/request";
-import { DashboardNav, NavItem } from "./DashboardNav";
+import { DashboardNav, SidebarNavItem } from "./DashboardNav";
 
 interface SidebarProjectsListingProps {
   show: boolean;
@@ -33,13 +33,13 @@ const SidebarProjectsListing: React.FC<SidebarProjectsListingProps> = ({
   return (
     <DashboardNav className="Projects-sidebar-listing">
       {projects.map((project) => (
-        <NavItem
+        <SidebarNavItem
           key={project.id}
           to={`/dashboard/projects/${project.id}`}
-          activeClassName="Nav--item-selected"
+          activeClassName="Nav-item--selected"
         >
           {project.name}
-        </NavItem>
+        </SidebarNavItem>
       ))}
     </DashboardNav>
   );
