@@ -33,13 +33,13 @@
 }
 
 .Modal-close-icon {
-  color: $accent-gray;
+  color: $gray;
   margin-left: auto;
   z-index: 10;
 }
 
 .Modal-close-icon:hover {
-  color: darken($accent-gray, 20%);
+  color: darken($gray, 20%);
 }
 
 .Modal-enter {

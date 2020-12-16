@@ -1,11 +1,13 @@
 $primary: #ff6600ff;
 $secondary: #fff;
-$accent-gray: #acacac;
-$dark-gray: rgb(26, 26, 26);
-$lightGray: #ebecf0;
+$gray: #acacac;
+$darkGray: rgb(34, 34, 34);
+$lightGray: rgb(246, 246, 246);
 $buttons: (".button");
 
 $red: red;
 
 $fontSize: 16px;
 $fontFamily: "Roboto";
+
+$lightShadow: 2px 2px 4px 1px rgba($darkGray, 0.08);

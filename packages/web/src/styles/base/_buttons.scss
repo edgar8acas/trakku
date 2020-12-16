@@ -20,8 +20,8 @@
 
 #{$buttons}.button--secondary {
   background: $secondary;
-  color: $dark-gray;
-  border: 1px solid $dark-gray;
+  color: $darkGray;
+  border: 1px solid $darkGray;
 }
 
 #{$buttons}.button--small {
@@ -56,13 +56,13 @@
 }
 
 #{$buttons}:disabled {
-  background: $accent-gray;
+  background: $gray;
   color: $secondary;
   cursor: not-allowed;
 
   &.button--secondary {
     border: none;
-    background: lighten($accent-gray, $amount: 20%);
-    color: darken($accent-gray, 20%);
+    background: lighten($gray, $amount: 20%);
+    color: darken($gray, 20%);
   }
 }
