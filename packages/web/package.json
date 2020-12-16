@@ -64,6 +64,10 @@
     "@types/react-router-dom": "^5.1.6",
     "@types/react-transition-group": "^4.4.0",
     "@types/redux-thunk": "^2.1.0",
-    "@types/yup": "^0.29.9"
+    "@types/yup": "^0.29.9",
+    "babel-loader": "8.1.0"
+  },
+  "resolutions": {
+    "@storybook/react/babel-loader": "8.1.0"
   }
 }
