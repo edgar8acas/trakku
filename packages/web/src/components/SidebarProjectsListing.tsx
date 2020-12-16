@@ -1,5 +1,5 @@
 import * as React from "react";
-import { matchPath, NavLink, useParams, useRouteMatch } from "react-router-dom";
+import { matchPath } from "react-router-dom";
 import { Project } from "../typings";
 import request from "../utilities/request";
 import { DashboardNav, NavItem } from "./DashboardNav";
@@ -35,13 +35,11 @@ const SidebarProjectsListing: React.FC<SidebarProjectsListingProps> = ({
       {projects.map((project) => (
         <NavItem
           key={project.id}
-          isSelected={matched?.params.id === project.id}
-          component={
-            <NavLink to={`/dashboard/projects/${project.id}`}>
-              {project.name}
-            </NavLink>
-          }
-        />
+          to={`/dashboard/projects/${project.id}`}
+          activeClassName="Nav--item-selected"
+        >
+          {project.name}
+        </NavItem>
       ))}
     </DashboardNav>
   );

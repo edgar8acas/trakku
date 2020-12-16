@@ -10,7 +10,7 @@
 
 .Navigation a {
   text-decoration: none;
-  color: $accent-gray;
+  color: $gray;
   font-weight: 600;
 }
 
@@ -33,18 +33,23 @@
 }
 
 .Nav-item:hover {
-  background-color: darken($accent-gray, 30%);
+  background-color: $lightGray;
 }
 
 .Nav-item a {
   display: block;
   padding: 0.7rem;
   text-decoration: none;
-  color: white;
+  color: $gray;
 }
 
 .Nav-item--selected,
 .Nav-item:hover.Nav-item--selected {
-  background-color: $primary;
+  background-color: lighten($primary, 40%);
   font-weight: 500;
+  border-left: 3px solid $primary;
+}
+
+a.Nav-item--selected {
+  color: $primary;
 }

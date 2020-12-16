@@ -15,15 +15,25 @@ function Dashboard() {
   const [showProjects, setShowProjects] = useState(false);
   return (
     <div className="Dashboard">
-      <div className="Sidebar">
+      <div className="Dashboard-header">
         <div className="Logo-wrapper">
           <Logo />
         </div>
+        <div className="Dashboard-header-navbar"></div>
+      </div>
+      <div className="Sidebar">
         <DashboardNav>
+          <NavItem to="/dashboard" exact activeClassName="Nav-item--selected">
+            Dashboard
+          </NavItem>
+
           <NavItem
-            component={<NavLink to={`${url}/projects`}>Projects</NavLink>}
+            to={`${url}/projects`}
+            activeClassName="Nav-item--selected"
             onClick={() => setShowProjects(!showProjects)}
-          />
+          >
+            Projects
+          </NavItem>
           <Switch>
             <Route
               path={`${path}/projects`}
@@ -36,7 +46,9 @@ function Dashboard() {
             />
           </Switch>
 
-          <NavItem component={<NavLink to={`${url}/issues`}>Issues</NavLink>} />
+          <NavItem to={`${url}/issues`} activeClassName="Nav-item--selected">
+            Issues
+          </NavItem>
         </DashboardNav>
         <button onClick={() => dispatch(logout())} className="Sidebar-Logout">
           Logout

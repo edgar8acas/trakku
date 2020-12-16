@@ -1,29 +1,22 @@
 .Sidebar {
-  background-color: darken($accent-gray, 40%);
   display: flex;
   flex-direction: column;
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  background-color: white;
+  box-shadow: $lightShadow;
 }
 
 .Sidebar-Logout:last-child {
   margin-top: auto;
   background: none;
   border: none;
-  color: white;
   display: flex;
   justify-content: space-between;
   padding: 0.7rem;
 }
 
 .Sidebar-Logout:last-child:hover {
-  background-color: darken($accent-gray, 30%);
+  background-color: darken($gray, 30%);
   cursor: pointer;
-}
-
-.Sidebar .Logo-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  box-shadow: -3px 3px 4px 1px rgba(0, 0, 0, 0.4);
 }

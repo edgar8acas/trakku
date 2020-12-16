@@ -1,4 +1,5 @@
 import * as React from "react";
+import { NavLink, NavLinkProps } from "react-router-dom";
 
 type DashboardNavProps = {
   className?: string;
@@ -14,21 +15,10 @@ export const DashboardNav: React.FC<DashboardNavProps> = ({
   );
 };
 
-type NavItemProps = {
-  component: React.ReactNode;
-  isSelected?: boolean;
-  onClick?: () => void;
-};
-
-export const NavItem: React.FC<NavItemProps> = ({
-  component,
-  onClick,
-  isSelected = false,
-}) => {
-  const selected = isSelected ? "Nav-item--selected" : null;
+export const NavItem: React.FC<NavLinkProps> = (props) => {
   return (
-    <li className={["Nav-item", selected].join(" ")} onClick={onClick}>
-      {component}
+    <li className={["Nav-item"].join(" ")}>
+      <NavLink {...props} />
     </li>
   );
 };
