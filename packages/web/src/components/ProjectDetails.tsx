@@ -1,10 +1,8 @@
 import { useParams } from "react-router-dom";
 import * as React from "react";
 import request from "../utilities/request";
-import { Project } from "../typings";
-interface ParamTypes {
-  id: string;
-}
+import { ParamTypes, Project } from "../typings";
+import InviteUserForm from "./InviteUserForm";
 
 const ProjectDetails: React.FC<{}> = () => {
   const { id } = useParams<ParamTypes>();
@@ -20,6 +18,7 @@ const ProjectDetails: React.FC<{}> = () => {
     <div>
       <h2>Project details</h2>
       <p>{project.name}</p>
+      <InviteUserForm />
     </div>
   );
 };

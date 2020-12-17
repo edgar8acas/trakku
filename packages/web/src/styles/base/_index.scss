@@ -6,10 +6,10 @@
 @import "inputs";
 body {
   margin: 0;
-  font-family: "Lato", sans-serif;
+  font-family: $fontFamily, sans;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 16px;
+  font-size: $fontSize;
 }
 
 code {

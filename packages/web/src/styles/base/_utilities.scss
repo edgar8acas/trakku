@@ -1,17 +1,9 @@
 .central-wrapper {
   margin: 0 auto;
-  width: 60%;
+  max-width: 768px;
 }
 
 .center-form {
   margin: 0px auto;
   max-width: 450px;
-}
-
-.link {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  text-decoration: underline;
 }

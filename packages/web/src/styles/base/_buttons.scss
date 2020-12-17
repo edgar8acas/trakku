@@ -1,13 +1,13 @@
 #{$buttons} {
   color: white;
   -webkit-appearance: none;
-  border: 2px solid $primary;
-  border-radius: 0.3rem;
+  border-radius: 4px;
+  border: none;
   background: $primary;
   text-decoration: none;
   font-size: 1rem;
-  padding: 0.4rem 0.7rem;
-  margin: 0 0 0.5rem 0;
+  padding: 0.5rem 1.4rem;
+  font-weight: 500;
   vertical-align: middle;
   text-align: center;
   cursor: pointer;
@@ -18,8 +18,55 @@
   background: darken($primary, 5%);
 }
 
+#{$buttons}.button--secondary {
+  background: $secondary;
+  color: $darkGray;
+  border: 1px solid $darkGray;
+
+  &:hover {
+    background-color: $lightGray;
+  }
+}
+
+#{$buttons}.button--small {
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+}
+
+#{$buttons}.button--large {
+  padding: 0.7rem 1.9rem;
+}
+
+#{$buttons}.button--link {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#{$buttons}.button--link {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-right: 0.3rem;
+  margin-left: 0.3rem;
+
+  &.button--primary {
+    color: $primary;
+  }
+}
+
 #{$buttons}:disabled {
-  background: $accent-gray;
+  background: $gray;
+  color: $secondary;
   cursor: not-allowed;
-  border: 2px solid darken($accent-gray, 5%);
+
+  &.button--secondary {
+    border: none;
+    background: lighten($gray, $amount: 20%);
+    color: darken($gray, 20%);
+  }
 }

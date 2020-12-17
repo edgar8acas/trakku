@@ -1,4 +1,4 @@
-import { User } from "src/entity/User";
+import { User } from "../entity/User";
 
 const removeUserPassword = (user: User) => {
   const copy = { ...user };

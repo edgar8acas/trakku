@@ -37,3 +37,7 @@ export type Project = {
   name: string;
   id: string;
 };
+
+export interface ParamTypes {
+  id: string;
+}

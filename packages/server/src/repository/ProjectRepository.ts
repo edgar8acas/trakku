@@ -14,7 +14,7 @@ export class ProjectRepository extends Repository<Project> {
   @Transaction()
   async createAndSave(
     { name }: Project,
-    userId: number,
+    userId: string,
     @TransactionManager() manager?: EntityManager
   ) {
     const project = new Project();
@@ -29,7 +29,7 @@ export class ProjectRepository extends Repository<Project> {
     return savedProject;
   }
 
-  async getUserProjects(userId: number) {
+  async getUserProjects(userId: string) {
     const projects = await this.createQueryBuilder("project")
       .innerJoinAndSelect(
         "project.userToProjects",

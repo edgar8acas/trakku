@@ -1,18 +1,18 @@
 import * as React from "react";
-import { NavLink, useRouteMatch } from "react-router-dom";
 import { Project } from "../typings";
 import request from "../utilities/request";
-import { DashboardNav, NavItem } from "./DashboardNav";
+import { DashboardNav, SidebarNavItem } from "./DashboardNav";
 
 interface SidebarProjectsListingProps {
   show: boolean;
+  location: any;
 }
 
 const SidebarProjectsListing: React.FC<SidebarProjectsListingProps> = ({
   show,
+  location,
 }) => {
   const [projects, setProjects] = React.useState<Project[]>([]);
-  const { path } = useRouteMatch();
 
   React.useEffect(() => {
     request("api/projects").then(({ data: { projects } }) => {
@@ -24,14 +24,13 @@ const SidebarProjectsListing: React.FC<SidebarProjectsListingProps> = ({
   return (
     <DashboardNav className="Projects-sidebar-listing">
       {projects.map((project) => (
-        <NavItem
+        <SidebarNavItem
           key={project.id}
-          component={
-            <NavLink to={`${path}/projects/${project.id}`}>
-              {project.name}
-            </NavLink>
-          }
-        />
+          to={`/dashboard/projects/${project.id}`}
+          activeClassName="Nav-item--selected"
+        >
+          {project.name}
+        </SidebarNavItem>
       ))}
     </DashboardNav>
   );

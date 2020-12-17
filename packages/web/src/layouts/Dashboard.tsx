@@ -2,8 +2,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { NavLink, Route, Switch, useRouteMatch } from "react-router-dom";
-import { DashboardNav, NavItem } from "../components/DashboardNav";
+import { Route, Switch, useRouteMatch } from "react-router-dom";
+import { DashboardNav, SidebarNavItem } from "../components/DashboardNav";
 import Projects from "../components/Projects";
 import SidebarProjectsListing from "../components/SidebarProjectsListing";
 import { logout } from "../slices/auth";
@@ -15,17 +15,48 @@ function Dashboard() {
   const [showProjects, setShowProjects] = useState(false);
   return (
     <div className="Dashboard">
-      <div className="Sidebar">
+      <div className="Dashboard-header">
         <div className="Logo-wrapper">
           <Logo />
         </div>
+        <div className="Dashboard-header-navbar"></div>
+      </div>
+      <div className="Sidebar">
         <DashboardNav>
-          <NavItem
-            component={<NavLink to={`${url}/projects`}>Projects</NavLink>}
+          <SidebarNavItem
+            to="/dashboard"
+            exact
+            activeClassName="Nav-item--selected"
+          >
+            Dashboard
+          </SidebarNavItem>
+
+          <SidebarNavItem
+            to={`${url}/projects`}
+            activeClassName="Nav-item--selected"
             onClick={() => setShowProjects(!showProjects)}
-          />
-          <SidebarProjectsListing show={showProjects} />
-          <NavItem component={<NavLink to={`${url}/issues`}>Issues</NavLink>} />
+            exact
+          >
+            Projects
+          </SidebarNavItem>
+          <Switch>
+            <Route
+              path={`${path}/projects`}
+              render={({ location }) => (
+                <SidebarProjectsListing
+                  location={location}
+                  show={showProjects}
+                />
+              )}
+            />
+          </Switch>
+
+          <SidebarNavItem
+            to={`${url}/issues`}
+            activeClassName="Nav-item--selected"
+          >
+            Issues
+          </SidebarNavItem>
         </DashboardNav>
         <button onClick={() => dispatch(logout())} className="Sidebar-Logout">
           Logout
@@ -40,7 +71,7 @@ function Dashboard() {
         <section className="Main-container">
           <Switch>
             <Route exact path={path}>
-              Dashboard
+              <span>Dashboard {JSON.stringify(path)}</span>
             </Route>
             <Route path={`${path}/projects`} component={Projects}></Route>
           </Switch>

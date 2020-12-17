@@ -1,4 +1,5 @@
 import * as React from "react";
+import { NavLink, NavLinkProps } from "react-router-dom";
 
 type DashboardNavProps = {
   className?: string;
@@ -14,15 +15,10 @@ export const DashboardNav: React.FC<DashboardNavProps> = ({
   );
 };
 
-type NavItemProps = {
-  component: React.ReactNode;
-  onClick?: () => void;
-};
-
-export const NavItem: React.FC<NavItemProps> = ({ component, onClick }) => {
+export const SidebarNavItem: React.FC<NavLinkProps> = (props) => {
   return (
-    <li className="Nav-item" onClick={onClick}>
-      {component}
+    <li className={["Nav-item"].join(" ")}>
+      <NavLink {...props} />
     </li>
   );
 };
