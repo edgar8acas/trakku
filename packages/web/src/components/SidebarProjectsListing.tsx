@@ -1,5 +1,4 @@
 import * as React from "react";
-import { matchPath } from "react-router-dom";
 import { Project } from "../typings";
 import request from "../utilities/request";
 import { DashboardNav, SidebarNavItem } from "./DashboardNav";
@@ -9,19 +8,11 @@ interface SidebarProjectsListingProps {
   location: any;
 }
 
-interface MatchParams {
-  id: string;
-}
-
 const SidebarProjectsListing: React.FC<SidebarProjectsListingProps> = ({
   show,
   location,
 }) => {
   const [projects, setProjects] = React.useState<Project[]>([]);
-
-  const matched = matchPath<MatchParams>(location.pathname, {
-    path: "/dashboard/projects/:id",
-  });
 
   React.useEffect(() => {
     request("api/projects").then(({ data: { projects } }) => {
