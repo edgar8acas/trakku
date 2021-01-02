@@ -8,6 +8,7 @@ export interface LocationState {
 }
 
 export type User = {
+  id?: string;
   email?: string;
   password?: string;
   name?: string;
@@ -40,4 +41,17 @@ export type Project = {
 
 export interface ParamTypes {
   id: string;
+}
+
+export interface List {
+  id: string;
+  title: string;
+  issueIds: string[];
+}
+
+export interface Issue {
+  id: string;
+  description: string;
+  asignee: User;
+  status: string;
 }

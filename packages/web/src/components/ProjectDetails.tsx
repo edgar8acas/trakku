@@ -3,6 +3,7 @@ import * as React from "react";
 import request from "../utilities/request";
 import { ParamTypes, Project } from "../typings";
 import InviteUserForm from "./InviteUserForm";
+import { BacklogBoard } from "./Backlog/BacklogBoard";
 
 const ProjectDetails: React.FC<{}> = () => {
   const { id } = useParams<ParamTypes>();
@@ -15,11 +16,11 @@ const ProjectDetails: React.FC<{}> = () => {
   }, [id]);
 
   return (
-    <div>
-      <h2>Project details</h2>
-      <p>{project.name}</p>
+    <>
+      <h1 className="Project-title">{project.name}</h1>
+      <BacklogBoard />
       <InviteUserForm />
-    </div>
+    </>
   );
 };
 
