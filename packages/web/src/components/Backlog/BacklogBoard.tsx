@@ -7,21 +7,24 @@ export const BacklogBoard = () => {
   const [boardData, setBoardData] = React.useState(initialData);
 
   function handleDragEnd(result: DropResult) {
-    const { destination, source } = result;
+    const { destination, source, draggableId } = result;
 
-    if (!destination) return;
+    if (!destination) {
+      return;
+    }
 
     if (
-      destination?.droppableId === source.droppableId &&
+      destination.droppableId === source.droppableId &&
       destination.index === source.index
-    )
+    ) {
       return;
+    }
 
     const list = boardData.lists[source.droppableId];
     const newIssueIds = Array.from(list.issueIds);
 
-    const change = newIssueIds.splice(source.index, 1);
-    newIssueIds.splice(destination.index, 0, ...change);
+    newIssueIds.splice(source.index, 1);
+    newIssueIds.splice(destination.index, 0, draggableId);
 
     setBoardData((prev) => {
       const newBoardData = {

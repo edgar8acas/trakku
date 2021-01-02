@@ -28,7 +28,11 @@
   padding: 0.4em;
   h5 {
     margin: 0;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 0.9rem;
+  }
+
+  &--is-dragging {
+    background-color: lighten($primary, 30%);
   }
 }
