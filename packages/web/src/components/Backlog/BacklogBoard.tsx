@@ -20,25 +20,53 @@ export const BacklogBoard = () => {
       return;
     }
 
-    const list = boardData.lists[source.droppableId];
-    const newIssueIds = Array.from(list.issueIds);
+    const startList = boardData.lists[source.droppableId];
+    const endList = boardData.lists[destination.droppableId];
 
-    newIssueIds.splice(source.index, 1);
-    newIssueIds.splice(destination.index, 0, draggableId);
+    if (startList === endList) {
+      const newIssueIds = Array.from(startList.issueIds);
 
-    setBoardData((prev) => {
-      const newBoardData = {
-        ...prev,
-        lists: {
-          ...prev.lists,
-          [source.droppableId]: {
-            ...list,
-            issueIds: newIssueIds,
+      newIssueIds.splice(source.index, 1);
+      newIssueIds.splice(destination.index, 0, draggableId);
+
+      setBoardData((prev) => {
+        const newBoardData = {
+          ...prev,
+          lists: {
+            ...prev.lists,
+            [source.droppableId]: {
+              ...startList,
+              issueIds: newIssueIds,
+            },
           },
-        },
-      };
-      return newBoardData;
-    });
+        };
+        return newBoardData;
+      });
+      return;
+    }
+
+    const startIssueIds = Array.from(startList.issueIds);
+    startIssueIds.splice(source.index, 1);
+    const newStart = {
+      ...startList,
+      issueIds: startIssueIds,
+    };
+
+    const endIssueIds = Array.from(endList.issueIds);
+    endIssueIds.splice(destination.index, 0, draggableId);
+    const newFinish = {
+      ...endList,
+      issueIds: endIssueIds,
+    };
+
+    setBoardData((prev) => ({
+      ...prev,
+      lists: {
+        ...prev.lists,
+        [source.droppableId]: newStart,
+        [destination.droppableId]: newFinish,
+      },
+    }));
   }
 
   const { listOrder, lists, issues } = boardData;
@@ -48,11 +76,10 @@ export const BacklogBoard = () => {
         {listOrder.map((listId) => {
           const list = lists[listId];
           return (
-            <Droppable droppableId={list.id}>
+            <Droppable droppableId={list.id} key={list.id}>
               {(provided) => (
                 <BacklogList
                   {...provided.droppableProps}
-                  key={list.id}
                   list={list}
                   issues={issues}
                   ref={provided.innerRef}

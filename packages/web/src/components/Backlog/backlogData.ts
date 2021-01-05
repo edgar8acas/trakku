@@ -28,6 +28,22 @@ const initialData: BoardData = {
       },
       status: "closed",
     },
+    "SOM-2": {
+      id: "SOM-2",
+      description: "Design UI",
+      asignee: {
+        id: "user-2",
+      },
+      status: "closed",
+    },
+    "SOM-4": {
+      id: "SOM-4",
+      description: "Program API",
+      asignee: {
+        id: "user-2",
+      },
+      status: "closed",
+    },
   },
   lists: {
     "List-1": {
@@ -35,8 +51,13 @@ const initialData: BoardData = {
       title: "To Do",
       issueIds: ["SOM-1", "SOM-3"],
     },
+    "List-2": {
+      id: "List-2",
+      title: "In progress",
+      issueIds: ["SOM-2", "SOM-4"],
+    },
   },
-  listOrder: ["List-1"],
+  listOrder: ["List-1", "List-2"],
 };
 
 export default initialData;
