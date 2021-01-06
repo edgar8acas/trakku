@@ -1,4 +1,11 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  OneToMany,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from "typeorm";
 import { Issue } from "./Issue";
 import { UserToProject } from "./UserToProject";
 
@@ -12,9 +19,18 @@ export class Project {
   })
   name: string;
 
+  @Column({ type: "json" })
+  lists: object;
+
   @OneToMany((type) => UserToProject, (userToProject) => userToProject.project)
   userToProjects: UserToProject[];
 
   @OneToMany(() => Issue, (issue) => issue.project)
   issues: Issue[];
+
+  @CreateDateColumn()
+  createdAt: Date;
+
+  @UpdateDateColumn()
+  updatedAt: Date;
 }

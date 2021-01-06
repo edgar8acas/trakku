@@ -1,9 +1,11 @@
 import {
   BeforeInsert,
   Column,
+  CreateDateColumn,
   Entity,
   OneToMany,
   PrimaryGeneratedColumn,
+  UpdateDateColumn,
 } from "typeorm";
 import { Issue } from "./Issue";
 import bcrypt from "bcryptjs";
@@ -29,8 +31,8 @@ export class User {
   @Column("text")
   password?: string;
 
-  @OneToMany((type) => Issue, (issue) => issue.owner)
-  issues: Issue[];
+  @OneToMany((type) => Issue, (issue) => issue.submitter)
+  submittedIssues: Issue[];
 
   @OneToMany((type) => UserToProject, (UserToProject) => UserToProject.user)
   userToProjects: UserToProject[];
@@ -39,4 +41,10 @@ export class User {
   async hashPassword() {
     this.password = await bcrypt.hash(this.password!, 10);
   }
+
+  @CreateDateColumn()
+  createdAt: Date;
+
+  @UpdateDateColumn()
+  updatedAt: Date;
 }
