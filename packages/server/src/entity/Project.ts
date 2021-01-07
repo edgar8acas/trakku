@@ -19,7 +19,7 @@ export class Project {
   })
   name: string;
 
-  @Column({ type: "json" })
+  @Column({ type: "json", nullable: true })
   lists: object;
 
   @OneToMany((type) => UserToProject, (userToProject) => userToProject.project)
