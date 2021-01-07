@@ -76,15 +76,19 @@ export const checkAuthentication = (): AppThunk => async (dispatch) => {
       data: { user },
     } = await request("api/me");
     dispatch(success(user));
-  } catch (error) {}
+  } catch (error) {
+    dispatch(logoutSuccess());
+  }
 };
 
 export const logout = (): AppThunk => async (dispatch) => {
   try {
     dispatch(loading());
     await request("api/logout", { method: "POST" });
+  } catch (error) {
+  } finally {
     dispatch(logoutSuccess());
-  } catch (error) {}
+  }
 };
 
 export const selectAuth = (state: RootState) => state.authState;
