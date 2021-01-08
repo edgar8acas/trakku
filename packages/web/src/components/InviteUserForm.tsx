@@ -9,7 +9,6 @@ const InviteUserForm: React.FC = ({ children }) => {
   const { id } = useParams<ParamTypes>();
   return (
     <div>
-      <h1>alala</h1>
       <Formik
         initialValues={{ emails: "" }}
         onSubmit={async (values) => {

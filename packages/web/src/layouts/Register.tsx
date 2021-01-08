@@ -95,6 +95,7 @@ function Register() {
             <Button
               label="Sign in"
               isLink
+              type="button"
               onClick={() => history.replace("/signin")}
             />
           </p>

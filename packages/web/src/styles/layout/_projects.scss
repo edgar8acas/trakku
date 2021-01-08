@@ -1,0 +1,13 @@
+.Projects {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: grid;
+  grid-template: auto 1fr / 1fr;
+}
+
+.Project-title {
+  color: $gray1000;
+}
